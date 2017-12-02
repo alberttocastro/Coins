@@ -1,0 +1,63 @@
+<%= form_with(model: address, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :neighborhood %><br>
+    <%= form.text_field :neighborhood %>
+  </p>
+  <p>
+    <%= form.label :street %><br>
+    <%= form.text_field :street %>
+  </p>
+  <p>
+    <%= form.label :nationality_id %><br>
+    <%= form.number_field :nationality_id %>
+  </p>
+  <p>
+    <%= form.label :idiom_id %><br>
+    <%= form.number_field :idiom_id %>
+  </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :isvalid %><br>
+    <%= form.check_box :isvalid %>
+  </p>
+  <p>
+    <%= form.label :isvisitable %><br>
+    <%= form.check_box :isvisitable %>
+  </p>
+  <p>
+    <%= form.label :isvisited %><br>
+    <%= form.check_box :isvisited %>
+  </p> 
+  <p>
+    <%= form.label :adrstype_id %><br>
+    <%= form.number_field :adrstype_id %>
+  </p>
+  <p>
+    <%= form.label :comments %><br>
+    <%= form.text_area :comments %>
+  </p>
+  <p>
+    <%= form.label :references %><br>
+    <%= form.text_area :references %>
+  </p>
+  <p>
+    <%= form.label :publisher_id %><br>
+    <%= form.number_field :publisher_id %>
+  </p>
+  <p>
+    <%= form.label :macroregion_id %><br>
+    <%= form.number_field :macroregion_id %>
+  </p>
+  <p>
+    <%= form.label :group_id %><br>
+    <%= form.number_field :group_id %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

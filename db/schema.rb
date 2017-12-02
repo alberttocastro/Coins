@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129162120) do
+ActiveRecord::Schema.define(version: 20171130230206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20171129162120) do
   end
 
   create_table "adrstypes", force: :cascade do |t|
-    t.string "type"
+    t.string "typename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
