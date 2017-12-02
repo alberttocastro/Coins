@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "/cultures" => "home#cultures"
 
+  get "/characteristics" => "home#characteristics"
+
   resources :addresses
 
   resources :nationalities

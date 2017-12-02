@@ -1,0 +1,2 @@
+class AdrstypesController < ApplicationController
+end
