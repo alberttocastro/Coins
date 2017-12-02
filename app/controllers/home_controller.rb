@@ -4,5 +4,6 @@ class HomeController < ApplicationController
 
   def cultures
     @nationalities = Nationality.all
+    @idioms = Idiom.all
   end
 end

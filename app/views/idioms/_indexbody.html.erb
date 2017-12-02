@@ -1,0 +1,16 @@
+ <%= link_to "New Idiom", new_idiom_path%>
+
+<table>
+  <tr>
+    <th>Idiom</th>
+  </tr>
+ 
+  <% @idioms.each do |idiom| %>
+    <tr>
+      <td><%= idiom.language %></td>
+      <td><%= link_to "Show", idiom_path(idiom) %></td>
+      <td><%= link_to "Edit", edit_idiom_path(idiom) %></td>
+      <td><%= link_to "Destroy", idiom_path(idiom), method: :delete, data:{confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>
