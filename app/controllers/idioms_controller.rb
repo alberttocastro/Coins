@@ -6,7 +6,7 @@ class IdiomsController < ApplicationController
     end
 
     def create
-        @idiom = Idiom.new(nationality_params)
+        @idiom = Idiom.new(idioms_params)
         
         if @idiom.save
             redirect_to @idiom
@@ -25,7 +25,7 @@ class IdiomsController < ApplicationController
 
     def update
         @idiom = Idiom.find(params[:id])
-        @idiom.update(nationality_params)
+        @idiom.update(idioms_params)
 
         redirect_to @nationality
     end
@@ -41,7 +41,7 @@ class IdiomsController < ApplicationController
         redirect_to idioms_path
     end
 
-    private def nationality_params
+    private def idioms_params
         params.require(:idiom).permit(:language)
     end
 
