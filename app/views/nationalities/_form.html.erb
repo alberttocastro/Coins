@@ -1,0 +1,11 @@
+<%= form_with(model: nationality, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :country %><br>
+    <%= form.text_field :country %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
