@@ -43,8 +43,4 @@ class MacroregionsController < ApplicationController
     private def macroregions_params
         params.require(:macroregion).permit(:macroreg)
     end
-
-
-
-
 end
