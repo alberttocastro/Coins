@@ -1,0 +1,11 @@
+<%= form_with(model: macroregion, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :macroreg %><br>
+    <%= form.text_field :macroreg %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
