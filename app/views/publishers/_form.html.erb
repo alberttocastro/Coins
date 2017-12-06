@@ -1,0 +1,31 @@
+<%= form_with(model: publisher, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :nome %><br>
+    <%= form.text_field :nome %>
+  </p>
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+    <p>
+    <%= form.label :cellphone %><br>
+    <%= form.text_field :cellphone %>
+  </p>
+    <p>
+    <%= form.label :neighborhood %><br>
+    <%= form.text_field :neighborhood %>
+  </p>
+  <p>
+    <%= form.label :macroregion %><br>
+    <%= form.text_field :macroregion_id %>
+  </p>
+    <p>
+    <%= form.label :group %><br>
+    <%= form.text_field :group_id %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
