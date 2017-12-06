@@ -1,0 +1,16 @@
+ <%= link_to "New Address Type", new_adrstype_path%>
+
+<table>
+  <tr>
+    <th>Address types</th>
+  </tr>
+ 
+  <% @adrstypes.each do |adrstype| %>
+    <tr>
+      <td><%= adrstype.typename %></td>
+      <td><%= link_to "Show", adrstype_path(adrstype) %></td>
+      <td><%= link_to "Edit", edit_adrstype_path(adrstype) %></td>
+      <td><%= link_to "Destroy", adrstype_path(adrstype), method: :delete, data:{confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>

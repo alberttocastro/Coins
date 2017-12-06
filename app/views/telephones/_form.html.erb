@@ -1,0 +1,19 @@
+<%= form_with(model: telephone, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+  <p>
+    <%= form.label :address_id %><br>
+    <%= form.number_field :address_id %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

@@ -2,6 +2,8 @@ class AddressesController < ApplicationController
 
     def new   
         @address = Address.new
+
+        @nationalities = Nationality.all
     end
 
     def create
