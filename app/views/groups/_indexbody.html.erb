@@ -1,0 +1,18 @@
+ <%= link_to "New Group", new_group_path%>
+
+<table>
+  <tr>
+    <th>Group</th>
+  </tr>
+ 
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.number %></td>
+      <td><%= group.conductor %></td>
+      <td><%= group.helper %></td>
+      <td><%= link_to "Show", group_path(group) %></td>
+      <td><%= link_to "Edit", edit_group_path(group) %></td>
+      <td><%= link_to "Destroy", group_path(group), method: :delete, data:{confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,19 @@
+<%= form_with(model: group, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :number %><br>
+    <%= form.text_field :number %>
+  </p>
+  <p>
+    <%= form.label :conductor %><br>
+    <%= form.text_field :conductor %>
+  </p>
+    <p>
+    <%= form.label :helper %><br>
+    <%= form.text_field :helper %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
