@@ -7,7 +7,8 @@
     <th>Neighborhood</th>
     <th>street</th>
     <th>nationality_id</th>
-    <th>idiom_id</th>
+    <th>Idiom</th>
+    <th>Second Idiom</th>
     <th>name</th>
     <th>isvalid</th>
     <th>isvisitable</th>
@@ -24,21 +25,74 @@
   </tr>
  
   <% @addresses.each do |address| %>
+
+  <% begin %>
+    <% @nationality = Nationality.find(address.nationality_id) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @nationality = Nationality.new(country: "Error") %>
+  <% end %>
+
+  <% begin %>
+    <% @adrstype = Adrstype.find(address.adrstype_id) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @adrstype = Adrstype.new(typename: "Error") %>
+  <% end %>
+  
+  <% begin %>
+    <% @adrstype = Adrstype.find(address.adrstype_id) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @adrstype = Adrstype.new(typename: "Error") %>
+  <% end %>
+  
+  <% begin %>
+    <% @publisher = Publisher.find(address.publisher_id) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @publisher = Publisher.new(name: "Error") %>
+  <% end %>
+
+  <% begin %>
+    <% @macroregion = Macroregion.find(address.macroregion_id) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @macroregion = Macroregion.new(macroreg: "Error") %>
+  <% end %>
+  
+  <% begin %>
+    <% @group = Group.find(address.group_id) %>
+    <% @conductor = Publisher.find(@group.conductor) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @group = Group.new(number: 0) %>
+    <% @conductor = Publisher.new(name: "Unknown") %>
+  <% end %>
+  
+  <% begin %>
+    <% @idiom = Idiom.find(address.idiom_id) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @idiom = Idiom.new(language: "Error") %>
+  <% end %>
+  
+  <% begin %>
+    <% @second_language = Idiom.find(address.second_language) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @second_language = Idiom.new(language: "Error") %>
+  <% end %>
+
+
     <tr>
       <td><%= address.neighborhood %></td>
       <td><%= address.street %></td>
-      <td><%= address.nationality_id %></td>
-      <td><%= address.idiom_id %></td>
+      <td><%= @nationality.country %> </td>
+      <td><%= @idiom.language  %></td>
+      <td><%= @second_language.language %></td>
       <td><%= address.name %></td>
       <td><%= address.isvalid %></td>
       <td><%= address.isvisitable %></td>
       <td><%= address.isvisited %></td>
-      <td><%= address.adrstype_id %></td>
+      <td><%= @adrstype.typename %></td>
       <td><%= address.comments %></td>
       <td><%= address.references %></td>
-      <td><%= address.publisher_id %></td>
-      <td><%= address.macroregion_id %></td>
-      <td><%= address.group_id %></td>
+      <td><%= @group.number.to_s + " - " + @conductor.name %></td>
+      <td><%= @macroregion.macroreg %></td>
+      <td><%= @group.number %></td>
       <td><%= link_to "Show", address_path(address) %></td>
       <td><%= link_to "Edit", edit_address_path(address) %></td>
       <td><%= link_to "Destroy", address_path(address), method: :delete, data:{confirm: "Are you sure?"} %></td>

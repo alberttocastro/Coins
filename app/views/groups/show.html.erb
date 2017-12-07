@@ -1,14 +1,26 @@
+    <% begin %>
+      <% @conductor = Publisher.find(@group.conductor) %>
+    <% rescue ActiveRecord::RecordNotFound %>
+      <% @conductor = Publisher.new(name: "unknown")%>
+    <% end %>
+
+    <% begin %>
+      <% @helper = Publisher.find(@group.helper) %>
+    <% rescue ActiveRecord::RecordNotFound %>
+      <% @helper = Publisher.new(name: "unknown")%>
+    <% end %>
+
 <p>
   <strong>Group # </strong>
   <%= @group.number %>
 </p>
 <p>
   <strong>Conductor:</strong>
-  <%= @group.conductor %>
+  <%= @conductor.name %>
 </p>
 <p>
   <strong>Helper:</strong>
-  <%= @group.helper %>
+  <%= @helper.name %>
 </p>
 
 <%= link_to 'Back', groups_path %>

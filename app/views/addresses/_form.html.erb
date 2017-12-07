@@ -1,3 +1,47 @@
+<%# Referências a outras tabelas %>
+    <%# Seleção de idioms %>
+      <% @idioms = Array.new %>
+      <% @idioms.push(["Unknown", ]) %>
+      <% Idiom.all.each do |idiom|%>
+        <% @idioms.push([idiom.language, idiom.id]) %>
+      <% end %>
+
+    <% @nationalities = Array.new %>
+    <% @nationalities.push(["Unknown", ]) %>
+    <% Nationality.all.each do |nationality|%>
+      <% @nationalities.push([nationality.country, nationality.id]) %>
+    <% end %>
+
+    <%# Seleção de Address types %>
+      <% @adrstypes = Array.new %>
+      <% Adrstype.all.each do |type|%>
+        <% @adrstypes.push([type.typename, type.id]) %>
+      <% end %>
+
+    <%# Seleção de publisher %>
+      <% @publishers = Array.new %>
+      <% @publishers.push(["No one", ]) %>
+      <% Publisher.all.each do |pub|%>
+        <% @publishers.push([pub.name, pub.id]) %>
+      <% end %>
+
+    <%# Seleção de Macroregion %>
+      <% @macroregions = Array.new %>
+      <% Macroregion.all.each do |macroeg|%>
+        <% @macroregions.push([macroeg.macroreg, macroeg.id]) %>
+      <% end %>
+
+    <%# Seleção de groups %>
+      <% @groups = Array.new %>
+      <% Group.all.each do |group|%>
+        <% begin %>
+          <% @publ = Publisher.find(group.conductor) %>
+        <% rescue ActiveRecord::RecordNotFound %>
+          <% @publ = Publisher.new(name: "Unknown")%>
+        <% end %>
+        <% @groups.push([group.number.to_s + " - " + @publ.name, group.id]) %>
+      <% end %>
+
 <%= form_with(model: address, local: true) do |form| %>
  
   <p>
@@ -10,11 +54,15 @@
   </p>
   <p>
     <%= form.label :nationality_id %><br>
-    <%= form.number_field :nationality_id %>
+    <%= form.select(:nationality_id, @nationalities)%>
   </p>
   <p>
     <%= form.label :idiom_id %><br>
-    <%= form.number_field :idiom_id %>
+    <%= form.select(:idiom_id, @idioms)%>
+  </p>
+    <p>
+    <%= form.label :second_language %><br>
+    <%= form.select(:second_language, @idioms)%>
   </p>
   <p>
     <%= form.label :name %><br>
@@ -34,7 +82,7 @@
   </p> 
   <p>
     <%= form.label :adrstype_id %><br>
-    <%= form.number_field :adrstype_id %>
+    <%= form.select(:adrstype_id, @adrstypes) %>
   </p>
   <p>
     <%= form.label :comments %><br>
@@ -46,15 +94,15 @@
   </p>
   <p>
     <%= form.label :publisher_id %><br>
-    <%= form.number_field :publisher_id %>
+    <%= form.select(:publisher_id, @publishers)  %>
   </p>
   <p>
     <%= form.label :macroregion_id %><br>
-    <%= form.number_field :macroregion_id %>
+    <%= form.select(:macroregion_id, @macroregions) %>
   </p>
   <p>
     <%= form.label :group_id %><br>
-    <%= form.number_field :group_id %>
+    <%= form.select(:group_id, @groups) %>
   </p>
   <p>
     <%= form.submit %>

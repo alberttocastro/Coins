@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130230206) do
+ActiveRecord::Schema.define(version: 20171206151036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20171130230206) do
     t.integer "publisher_id"
     t.integer "macroregion_id"
     t.integer "group_id"
+    t.integer "second_language"
   end
 
   create_table "addresses_idioms", force: :cascade do |t|

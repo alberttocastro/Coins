@@ -1,3 +1,19 @@
+<% @groups = Array.new %>
+<% Group.all.each do |group| %>
+  <% begin %>
+    <% @conductor = Publisher.find(group.conductor) %>
+  <% rescue ActiveRecord::RecordNotFound %>
+    <% @conductor = Publisher.new(name: "unknown")%>
+  <% end %>
+  <% @groups.push([group.number.to_s + "-" + @conductor.name]) %>
+<%end%>
+
+<% @macroregions = Array.new %>
+<% Macroregion.all.each do |macroreg| %>
+  <%@macroregions.push([macroreg.macroreg,macroreg.id])%>
+<% end %>
+
+
 <%= form_with(model: publisher, local: true) do |form| %>
  
   <p>
@@ -18,11 +34,11 @@
   </p>
   <p>
     <%= form.label :macroregion %><br>
-    <%= form.text_field :macroregion_id %>
+    <%= form.select(:macroregion_id,@macroregions) %>
   </p>
     <p>
     <%= form.label :group %><br>
-    <%= form.text_field :group_id %>
+    <%= form.select(:group_id, @groups) %>
   </p>
   <p>
     <%= form.submit %>
