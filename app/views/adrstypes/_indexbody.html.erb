@@ -1,16 +1,15 @@
- <%= link_to "New Address Type", new_adrstype_path%>
 
-<table>
-  <tr>
-    <th>Address types</th>
-  </tr>
- 
+
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Addresses Types</h4> </li>
+
   <% @adrstypes.each do |adrstype| %>
-    <tr>
-      <td><%= adrstype.typename %></td>
-      <td><%= link_to "Show", adrstype_path(adrstype) %></td>
-      <td><%= link_to "Edit", edit_adrstype_path(adrstype) %></td>
-      <td><%= link_to "Destroy", adrstype_path(adrstype), method: :delete, data:{confirm: "Are you sure?"} %></td>
-    </tr>
+    <li class="collection-item">
+      <%= adrstype.typename %>
+     
+      <%= link_to "Edit", edit_adrstype_path(adrstype) %>
+      <%= link_to "Destroy", adrstype_path(adrstype), method: :delete, data:{confirm: "Are you sure?"} %>
+    </li>
   <% end %>
-</table>
+</ul>
+<%= link_to new_adrstype_path, class:"btn-floating waves-effect waves-light red right" do%><i class="material-icons">add</i> <%end%>

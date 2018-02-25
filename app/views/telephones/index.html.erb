@@ -1,3 +1,29 @@
-<h1>Listing Telephones</h1>
- 
-<%= render "indexbody" %>
+<div class="container">
+	<h2>Telephones</h1>
+
+	<table class="striped centered responsive-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Number</th>
+				<th>Address</th>
+				<th>Options</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @telephones.each do |telephone| %>
+				<tr>
+					<td><%= telephone.name %></td>
+					<td><%= telephone.number %></td>
+					<td><%= telephone.address_id %></td>
+					<td><%= link_to telephone_path(telephone), class:"btn-floating btn-small waves-effect waves-light red" do %> <i class="material-icons">art_track</i> <%end%> <%= link_to edit_telephone_path(telephone), class:"btn-floating btn-small waves-effect waves-light red" do %> <i class="material-icons">edit</i> <%end%> <%= link_to telephone_path(telephone), method: :delete, data:{confirm: "Are you sure?"}, class:"btn-floating btn-small waves-effect waves-light red" do%> <i class="material-icons">delete</i> <%end%> </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<div class="fixed-action-btn offset-s11">
+		<%= link_to new_telephone_path, class:"btn-floating btn-large waves-effect waves-light red" do %>
+			<i class="material-icons">add</i>
+		<% end %>
+	</div>
+</div>

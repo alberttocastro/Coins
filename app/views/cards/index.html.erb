@@ -1,0 +1,52 @@
+
+<div class="container">
+<h2>Listing cards</h2>
+
+<div class="row">
+  <div class="col s6 m4 l4"> <%= link_to print_path(format: 'pdf', card: nil), class:"waves-effect waves-light btn" do %> <i class="material-icons left">local_printshop</i>Print all <%end%></div>
+  <div class="col s6 m4 l4"> <%= link_to unassigned_path, class:"waves-effect waves-light btn" do %> <i class="material-icons left">assignment</i>Unassigned<%end%>
+</div>
+
+<div class="row">
+<div class="col s12 m12 l12">
+ 
+  <% @cards.each do |card| %>
+
+  <ul class="collection with-header">
+        <li class="collection-header">
+        <div class="row"> <div class="col s8 m8 l10"><h4><b>#</b><%= card.number %> - <%= card.name %></h4> </div>
+        <div class="col s4 m4 l2"> <div class="valign-wrapper"> <%= link_to edit_card_path(card), class:"btn-floating waves-effect waves-light red" do %><i class="material-icons">edit</i> <%end%> <%= link_to card_path(card), method: :delete, data:{confirm: "Are you sure?"}, class:"btn-floating waves-effect waves-light red" do %> <i class="material-icons">delete</i> <%end%> <%= link_to print_path(format: 'pdf', card: card.id), class:"btn-floating waves-effect waves-light red" do%> <i class="material-icons">print</i> <%end%> </div> </div> </div> </li> 
+        <% Address.where("card_number = ?", card.number).order(:neighborhood).each do |address| %>
+          <% begin %>
+            <% @test = Publisher.find(address.publisher_id) %>
+            <% @publisher = Publisher.find(address.publisher_id).name%>
+          <% rescue ActiveRecord::RecordNotFound %>
+            <% @publisher = Publisher.new(name: "No One").name %>
+          <% end %>
+
+          <% begin %>
+            <% @nationality = Nationality.find(address.nationality_id).country %>
+          <% rescue ActiveRecord::RecordNotFound %>
+            <% @nationality = Nationality.new(country: "Error").country %>
+          <% end %>
+
+          <%if(address.isvisitable)%>
+          <li class="collection-item">
+          <% else %>
+          <li class="collection-item amber lighten-1">
+          <% end %>
+          (<%= address.neighborhood%>) <%= address.street%> - <i> <%= Macroregion.find(address.macroregion_id).macroreg%></i>. <%if(address.isvisited) %> <b> Visited by: <%= @publisher %> </b> <%end%> <%= link_to address_path(address), class: "secondary-content" do %> <i class="material-icons">send</i> <%end%></li>
+        <% end %>
+      </ul>
+
+  <% end %>
+  </div>
+</div>
+</div>
+
+
+  <div class="fixed-action-btn offset-s10">
+    <%= link_to new_card_path, class:"btn-floating btn-large waves-effect waves-light red" do %>
+      <i class="material-icons">add</i>
+    <% end %>
+  </div>

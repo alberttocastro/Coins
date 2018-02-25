@@ -42,47 +42,79 @@
         <% @groups.push([group.number.to_s + " - " + @publ.name, group.id]) %>
       <% end %>
 
+    <%# Seleção de Cards %>
+      <% @cards = Array.new %>
+      <% @cards.push(["No Card" , 0]) %>
+      <% Card.all.each do |card|%>
+        <% @cards.push([card.number.to_s + " - " + card.name , card.number]) %>
+      <% end %>
+<%# Referências a outras tabelas Fim %>
+<div class="container">
 <%= form_with(model: address, local: true) do |form| %>
  
   <p>
-    <%= form.label :neighborhood %><br>
-    <%= form.text_field :neighborhood %>
-  </p>
-  <p>
     <%= form.label :street %><br>
     <%= form.text_field :street %>
-  </p>
-  <p>
-    <%= form.label :nationality_id %><br>
-    <%= form.select(:nationality_id, @nationalities)%>
-  </p>
-  <p>
-    <%= form.label :idiom_id %><br>
-    <%= form.select(:idiom_id, @idioms)%>
-  </p>
-    <p>
-    <%= form.label :second_language %><br>
-    <%= form.select(:second_language, @idioms)%>
   </p>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
   <p>
-    <%= form.label :isvalid %><br>
-    <%= form.check_box :isvalid %>
+    <%= form.label :neighborhood %><br>
+    <%= form.text_field :neighborhood %>
   </p>
-  <p>
-    <%= form.label :isvisitable %><br>
-    <%= form.check_box :isvisitable %>
-  </p>
-  <p>
-    <%= form.label :isvisited %><br>
-    <%= form.check_box :isvisited %>
-  </p> 
-  <p>
-    <%= form.label :adrstype_id %><br>
-    <%= form.select(:adrstype_id, @adrstypes) %>
+  <div>
+    <%= form.label :nationality %><br>
+    <%= form.select(:nationality_id, @nationalities) %>
+  </div>
+
+<div class="row">
+  <div class="col s12 m6 l6">
+    <%= form.label :idiom_id %><br>
+    <%= form.select(:idiom_id, @idioms)%>
+  </div>
+  <div class="col s12 m6 l6">
+    <%= form.label :second_language %><br>
+    <%= form.select(:second_language, @idioms)%>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col s12 m8 l8">
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <%= form.check_box :isvalid, id: :isvalid%>
+        <%= form.label "Is the address really valid?", for: :isvalid%>
+      </div>
+      <div class="col s12 m6 l6">
+        <%= form.check_box :isvisitable, id: :isvisitable %>
+        <%= form.label "Does the person allow us to visit?", for: :isvisitable %><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <%= form.label :adrstype_id %>
+        <%= form.select(:adrstype_id, @adrstypes) %>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="col s12 m4 l4">
+      <div class="row">
+        <%= form.check_box :isvisited, id: :isvisited %>
+        <%= form.label "Is someone visiting this addres?", for: :isvisited %>
+      </div>
+      <div class="row">
+        <%= form.label :publisher %>
+        <%= form.select(:publisher_id, @publishers)  %>
+      </div>
+    </div>
+
+</div>
+   
   </p>
   <p>
     <%= form.label :comments %><br>
@@ -93,10 +125,6 @@
     <%= form.text_area :references %>
   </p>
   <p>
-    <%= form.label :publisher_id %><br>
-    <%= form.select(:publisher_id, @publishers)  %>
-  </p>
-  <p>
     <%= form.label :macroregion_id %><br>
     <%= form.select(:macroregion_id, @macroregions) %>
   </p>
@@ -105,7 +133,23 @@
     <%= form.select(:group_id, @groups) %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.label :card_number %><br>
+    <%= form.select(:card_number, @cards) %>
   </p>
- 
+
+  <div class="row">
+    <div class="col s8">
+    <%= link_to addresses_path, class:"btn waves-effect waves-light",type:"button" do %>
+      Back <i class="material-icons left">arrow_back</i>
+    <%end%>
+    </div>
+    <div class="col s4">
+    <button name="commit" type="submit" value="Create" class="btn waves-effect waves-light right">
+    Submit <i class="material-icons right">send</i>
+    </button>
+    </div>
+  </div>
 <% end %>
+
+</div>
+

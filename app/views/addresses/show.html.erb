@@ -1,3 +1,4 @@
+<%#  Variáveis %>
   <% begin %>
     <% @nationality = Nationality.find(@address.nationality_id) %>
   <% rescue ActiveRecord::RecordNotFound %>
@@ -42,80 +43,113 @@
     <% @second_language = Idiom.new(language: "Unknown") %>
   <% end %>
 
+<%# /Variáveis fim %>
+<div class="row">
+  <h3><%= @address.street %></h1>
+</div>
 
-<p>
-  <strong>neighborhood:</strong>
-  <%= @address.neighborhood %>
-</p>
- 
-<p>
-  <strong>street:</strong>
-  <%= @address.street %>
-</p>
+<div class="row">
 
-<p>
-  <strong>nationality_id:</strong>
-  <%= @nationality.country %>
-</p>
- 
-<p>
-  <strong>idiom_id:</strong>
-  <%= @idiom.language %>
-</p>
-
-<p>
-  <strong>Second language:</strong>
-  <%= @second_language.language %>
-</p>
-
-<p>
-  <strong>isvalid:</strong>
-  <%= @address.isvalid %>
-</p>
- 
-<p>
-  <strong>isvisitable:</strong>
-  <%= @address.isvisitable %>
-</p>
-
-<p>
-  <strong>isvisited:</strong>
-  <%= @address.isvisited %>
-</p>
- 
-<p>
-  <strong>adrstype_id:</strong>
-  <%= @adrstype.typename %>
-</p>
-
-<p>
-  <strong>comments:</strong>
-  <%= @address.comments %>
-</p>
- 
-<p>
-  <strong>references:</strong>
-  <%= @address.references %>
-</p>
-
-<p>
-  <strong>publisher_id:</strong>
-  <%= @publisher.name %>
-</p>
- 
-<p>
-  <strong>macroregion_id:</strong>
-  <%= @macroregion.macroreg %>
-</p>
-
-<p>
-  <strong>group_id:</strong>
-  <%= @group.number.to_s + " - " + @conductor.name %>
-</p>
- 
-<p>
-  <strong>name:</strong>
-  <%= @address.name %>
-</p>
-
-<%= link_to 'Back', addresses_path %>
+<%# Coluna da esquerda %>
+<div class="col s12 m4 l3">
+<%if @address.isvisitable %>
+<div class="card-panel teal">
+<%else%>
+<div class="card-panel deep-orange darken-3">
+<%end%>
+<span class="white-text">
+    <p>
+      <strong>Name: </strong><%= @address.name %>
+    </p>
+    <p>
+      <strong>Neighborhood: </strong><%= @address.neighborhood %>
+    </p>
+    <p>
+      <strong>References: </strong><%= @address.references %>
+    </p>
+    <div class="divider"></div>
+    <p>
+      <strong>Nationality: </strong><%= @nationality.country %>
+    </p>
+    <p>
+      <strong>Idiom: </strong><%= @idiom.language %>
+    </p>
+    <p>
+      <strong>Second language: </strong><%= @second_language.language %>
+    </p>
+    <p>
+      <strong>Comments: </strong><%= @address.comments %>
+    </p>
+    <div class="divider"></div>
+    <p>
+      <strong>Is Someone Visiting? </strong><% if @address.isvisited %> Yes <%else%> No <%end%>
+    </p>
+    <% if @address.isvisited %> <p><strong>Publisher: </strong><%= @publisher.name %></p> <%end%>
+    <p>
+      <strong>Address Type: </strong><%= @adrstype.typename %>
+    </p>
+    <div class="divider"></div>
+    <p>
+      <strong>Macroregion: </strong><%= @macroregion.macroreg %>
+    </p>
+    <p>
+      <strong>Group: </strong><%= @group.number.to_s + " - " + @conductor.name %>
+    </p>
+  </span>
+  </div>
+  </div>
+  <%# Coluna da esquerda fim %>
+  <%# Coluna da direita %>
+  <div class="col s12 m8 l9">
+  <div class="container">
+  <h3>Visits</h3>
+    <% @visits.each do |visit| %>
+      <% @completedate = visit.date.to_s.split %>
+      <% @date = @completedate[0].split('-')%>
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <p>
+            <span class="card-title"><%= @date[1] %>/<%= @date[2] %>/<%= @date[0] %></span>
+            <b><%= Publisher.find(visit.publisher_id).name %>: </b><%= visit.comment%><br/>
+            <%= link_to visit_path(visit), method: :delete, data:{confirm: "Are you sure?"}, class:"btn-floating halfway-fab waves-effect waves-light red" do %> <i class="material-icons">delete</i> <%end%>
+          </p>
+        </div>
+      </div>
+    <%end%>
+    <br>
+  <div class="divider"></div>
+    <%= form_with(model: @visit, local: true) do |form| %>
+      <% @publishers = Array.new %>
+      <% Publisher.all.each do |pub|%>
+        <% @publishers.push([pub.name, pub.id]) %>
+      <% end %>
+      
+      <%= form.number_field :address_id, type:"hidden" %>
+      <p>
+        <%= form.label :publisher_id %><br>
+        <%= form.select(:publisher_id, @publishers) %>
+      </p>
+      <p>
+        <%= form.label :date %><br>
+        <%= form.date_field :date, class: "datepicker" %>
+      </p>
+      <p>
+        <%= form.label :comment %><br>
+        <%= form.text_area :comment %>
+      </p>
+      <p>
+        <%= form.button class:"btn waves-effect waves-light right", name:"address_id", value: Address.find(@address.id).id do %> Submit <i class="material-icons right">send</i> <%end%>
+      </p>
+    <% end %>
+  </div>
+  </div>
+  <%# coluna da direita fim %>
+</div>
+<div class="row">
+<div class="col s12 m4 l3">
+<div class="container">
+  <%= link_to addresses_path, class:"btn-floating  waves-effect waves-light blue-grey darken-4" do %><i class="material-icons"> arrow_back </i> <%end%>
+  <%= link_to edit_address_path(@address), class:"btn-floating  waves-effect waves-light blue-grey darken-4" do %> <i class="material-icons"> edit </i> <%end%>
+</div>
+</div>
+</div>

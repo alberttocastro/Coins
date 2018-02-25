@@ -1,16 +1,11 @@
- <%= link_to "New Idiom", new_idiom_path%>
-
-<table>
-  <tr>
-    <th>Idiom</th>
-  </tr>
- 
+  <ul class="collection with-header">
+  <li class="collection-header"><h4>Language</h4> </li>
   <% @idioms.each do |idiom| %>
-    <tr>
-      <td><%= idiom.language %></td>
-      <td><%= link_to "Show", idiom_path(idiom) %></td>
-      <td><%= link_to "Edit", edit_idiom_path(idiom) %></td>
-      <td><%= link_to "Destroy", idiom_path(idiom), method: :delete, data:{confirm: "Are you sure?"} %></td>
-    </tr>
+    <li class="collection-item">
+      <%= idiom.language %>
+      <%= link_to "Edit", edit_idiom_path(idiom) %>
+      <%= link_to "Destroy", idiom_path(idiom), method: :delete, data:{confirm: "Are you sure?"} %>
+    </li>
   <% end %>
-</table>
+  </ul>
+  <%= link_to new_idiom_path, class:"btn-floating waves-effect waves-light red right" do%><i class="material-icons">add</i> <%end%>

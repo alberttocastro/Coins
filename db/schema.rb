@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206151036) do
+ActiveRecord::Schema.define(version: 20171223182431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171206151036) do
     t.integer "macroregion_id"
     t.integer "group_id"
     t.integer "second_language"
+    t.integer "card_number"
   end
 
   create_table "addresses_idioms", force: :cascade do |t|
@@ -44,6 +45,13 @@ ActiveRecord::Schema.define(version: 20171206151036) do
 
   create_table "adrstypes", force: :cascade do |t|
     t.string "typename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.integer "number"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -89,6 +97,15 @@ ActiveRecord::Schema.define(version: 20171206151036) do
     t.integer "address_id"
     t.string "number"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.integer "address_id"
+    t.integer "publisher_id"
+    t.datetime "date"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

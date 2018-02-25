@@ -1,16 +1,12 @@
- <%= link_to "New Country", new_nationality_path%>
-
-<table>
-  <tr>
-    <th>Country</th>
-  </tr>
  
+
+  <ul class="collection with-header">
+  <li class="collection-header"><h4>Countries</h4> </li>
   <% @nationalities.each do |nationality| %>
-    <tr>
-      <td><%= nationality.country %></td>
-      <td><%= link_to "Show", nationality_path(nationality) %></td>
-      <td><%= link_to "Edit", edit_nationality_path(nationality) %></td>
-      <td><%= link_to "Destroy", nationality_path(nationality), method: :delete, data:{confirm: "Are you sure?"} %></td>
-    </tr>
+    
+      <li class="collection-item"><%= nationality.country %> <%= link_to "Edit", edit_nationality_path(nationality) %> <%= link_to "Destroy", nationality_path(nationality), method: :delete, data:{confirm: "Are you sure?"} %>
+      </li>
   <% end %>
-</table>
+   </ul>
+  <%= link_to new_nationality_path, class:"btn-floating waves-effect waves-light red right" do%><i class="material-icons">add</i> <%end%>
+ 

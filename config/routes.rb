@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get "/characteristics" => "home#characteristics"
 
+  get "/unassigned" => "cards#unassigned"
+
+  get "/print" => "cards#print"
+
   resources :addresses
 
   resources :nationalities
@@ -24,6 +28,10 @@ Rails.application.routes.draw do
   resources :groups
 
   resources :publishers
+
+  resources :cards
+
+  resources :visits
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
