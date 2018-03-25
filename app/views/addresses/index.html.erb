@@ -6,31 +6,25 @@
 <% begin %>
   <% @nationality = Nationality.find(address.nationality_id) %>
 <% rescue ActiveRecord::RecordNotFound %>
-  <% @nationality = Nationality.new(country: "Error") %>
+  <% @nationality = Nationality.new(country: "Unknown") %>
 <% end %>
 
 <% begin %>
   <% @adrstype = Adrstype.find(address.adrstype_id) %>
 <% rescue ActiveRecord::RecordNotFound %>
-  <% @adrstype = Adrstype.new(typename: "Error") %>
-<% end %>
-
-<% begin %>
-  <% @adrstype = Adrstype.find(address.adrstype_id) %>
-<% rescue ActiveRecord::RecordNotFound %>
-  <% @adrstype = Adrstype.new(typename: "Error") %>
+  <% @adrstype = Adrstype.new(typename: "Unknown") %>
 <% end %>
 
 <% begin %>
   <% @publisher = Publisher.find(address.publisher_id) %>
 <% rescue ActiveRecord::RecordNotFound %>
-  <% @publisher = Publisher.new(name: "Error") %>
+  <% @publisher = Publisher.new(name: "Unknown") %>
 <% end %>
 
 <% begin %>
   <% @macroregion = Macroregion.find(address.macroregion_id) %>
 <% rescue ActiveRecord::RecordNotFound %>
-  <% @macroregion = Macroregion.new(macroreg: "Error") %>
+  <% @macroregion = Macroregion.new(macroreg: "Unknown") %>
 <% end %>
 
 <% begin %>
@@ -44,7 +38,7 @@
 <% begin %>
   <% @idiom = Idiom.find(address.idiom_id) %>
 <% rescue ActiveRecord::RecordNotFound %>
-  <% @idiom = Idiom.new(language: "Error") %>
+  <% @idiom = Idiom.new(language: "Unknown") %>
 <% end %>
 
 <% begin %>
