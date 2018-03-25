@@ -6,16 +6,52 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  </head>
-
+    
+    <%# Google Icon Font %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    
+    </head>
   <body>
-    <%= render 'partials/navbar'%>
+  <%# Navbar %>
+  <%= render 'partials/navbar'%>
+
+  <main>
+ <%# Body %>
     <%= yield %>
 
+  </main>
+<%# Footer %>
+  <%= render 'partials/footer'%>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </body>
+    <script>
+      $('select').material_select();
+
+      $('.datepicker').pickadate({
+          format: 'yyyy-mm-dd',
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15, // Creates a dropdown of 15 years to control year,
+          today: 'Today',
+          clear: false,
+          close: 'Ok',
+          closeOnSelect: false // Close upon selecting a date,
+        });
+      $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
+      onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
+        }
+      );
+
+      $('.fixed-action-btn').floatingActionButton({
+        direction: 'top', // Direction menu comes out
+        hoverEnabled: true, // Hover enabled
+        toolbarEnabled: false // Toolbar transition enabled
+      });
+    </script>
+    </body>
 </html>

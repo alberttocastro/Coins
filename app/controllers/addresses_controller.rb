@@ -18,6 +18,9 @@ class AddressesController < ApplicationController
     
     def show
         @address = Address.find(params[:id])
+
+        @visit = Visit.new(date: Date.current)
+        @visits = Visit.where("address_id = ?", params[:id]).order(date: :desc)
     end
 
     def edit
@@ -33,6 +36,11 @@ class AddressesController < ApplicationController
 
     def index
         @addresses = Address.all
+        @amount = 0
+        @addresses.each do |address|
+            @amount = @amount +1
+        end
+
     end
 
     def destroy
@@ -43,7 +51,7 @@ class AddressesController < ApplicationController
     end
 
     private def address_params
-        params.require(:address).permit(:neighborhood, :street, :nationality_id, :idiom_id, :name, :isvalid, :isvisitable, :isvisited, :adrstype_id, :comments, :references, :publisher_id, :macroregion_id, :group_id, :second_language)
+        params.require(:address).permit(:neighborhood, :street, :nationality_id, :idiom_id, :name, :isvalid, :isvisitable, :isvisited, :adrstype_id, :comments, :references, :publisher_id, :macroregion_id, :group_id, :second_language, :card_number)
     end
 
 end

@@ -1,3 +1,4 @@
+<div class="container">
 <% @groups = Array.new %>
 <% Group.all.each do |group| %>
   <% begin %>
@@ -5,7 +6,7 @@
   <% rescue ActiveRecord::RecordNotFound %>
     <% @conductor = Publisher.new(name: "unknown")%>
   <% end %>
-  <% @groups.push([group.number.to_s + "-" + @conductor.name]) %>
+  <% @groups.push([group.number.to_s + "-" + @conductor.name,group.id]) %>
 <%end%>
 
 <% @macroregions = Array.new %>
@@ -17,8 +18,8 @@
 <%= form_with(model: publisher, local: true) do |form| %>
  
   <p>
-    <%= form.label :nome %><br>
-    <%= form.text_field :nome %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
   </p>
   <p>
     <%= form.label :email %><br>
@@ -40,8 +41,18 @@
     <%= form.label :group %><br>
     <%= form.select(:group_id, @groups) %>
   </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="row">
+    <div class="col s8">
+    <%= link_to publishers_path, class:"btn waves-effect waves-light",type:"button" do %>
+      Back <i class="material-icons left">arrow_back</i>
+    <%end%>
+    </div>
+    <div class="col s4">
+    <button name="commit" type="submit" value="Create" class="btn waves-effect waves-light right">
+    Submit <i class="material-icons right">send</i>
+    </button>
+    </div>
+  </div>
  
 <% end %>
+</div>

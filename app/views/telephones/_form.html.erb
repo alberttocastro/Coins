@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with(model: telephone, local: true) do |form| %>
  
   <p>
@@ -9,11 +10,7 @@
     <%= form.text_field :number %>
   </p>
   <p>
-    <%= form.label :address_id %><br>
-    <%= form.number_field :address_id %>
-  </p>
-  <p>
     <%= form.submit %>
   </p>
- 
 <% end %>
+</div>
