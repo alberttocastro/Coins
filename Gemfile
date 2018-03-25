@@ -76,3 +76,5 @@ gem 'prawn'
 
 #Please add the following to your Gemfile to avoid polling for changes:
  gem 'wdm', '>= 0.1.0'
+
+ gem 'bcrypt', platforms: :ruby
