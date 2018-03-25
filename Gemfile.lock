@@ -160,12 +160,9 @@ GEM
     pdf-core (0.7.0)
     pg (0.21.0)
     pg (0.21.0-x86-mingw32)
-<<<<<<< HEAD
-=======
     prawn (2.2.2)
       pdf-core (~> 0.7.0)
       ttfunk (~> 1.5)
->>>>>>> b56863d2280ab2b4326a067d440402cc5dae5dbb
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
