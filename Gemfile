@@ -59,16 +59,23 @@ gem 'rails_admin', github: 'sferik/rails_admin'
 
 gem 'rails_admin_rollincode', '~> 1.0'
 
+#Authentication - @albertto.castro
 gem 'devise'
-
-gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'autoprefixer-rails'
 
-gem 'materialize-sass'
+gem 'materialize-sass', '~> 1.0.0.beta'
 
 gem 'jquery-rails'
 
 gem 'material_icons'
 
 gem 'prawn'
+
+#permissions policies
+gem "pundit"
+
+#Please add the following to your Gemfile to avoid polling for changes:
+ gem 'wdm', '>= 0.1.0'
+
+ gem 'bcrypt', platforms: :ruby

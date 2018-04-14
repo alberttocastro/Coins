@@ -40,12 +40,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-<<<<<<< HEAD
-  config.assets.debug = true
-  
-=======
   config.assets.debug = false
->>>>>>> b56863d2280ab2b4326a067d440402cc5dae5dbb
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
@@ -56,4 +51,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  #default URL
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
