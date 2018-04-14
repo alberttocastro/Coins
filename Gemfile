@@ -62,11 +62,9 @@ gem 'rails_admin_rollincode', '~> 1.0'
 #Authentication - @albertto.castro
 gem 'devise'
 
-gem 'bootstrap-sass', '~> 3.2.0'
-
 gem 'autoprefixer-rails'
 
-gem 'materialize-sass'
+gem 'materialize-sass', '~> 1.0.0.beta'
 
 gem 'jquery-rails'
 

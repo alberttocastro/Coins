@@ -4,8 +4,10 @@
     <title>Territory</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+    <%#= stylesheet_link_tag    'application', media: 'all' %>
+    <%#= javascript_include_tag 'application' %>
     
     <%# Google Icon Font %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,10 +27,11 @@
 <%# Footer %>
   <%= render 'partials/footer'%>
 
+    <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> %>
     <script>
-      $('select').material_select();
+      $('select').formSelect();
 
-      $('.datepicker').pickadate({
+      $('.datepicker').datepicker({
           format: 'yyyy-mm-dd',
           selectMonths: true, // Creates a dropdown to control month
           selectYears: 15, // Creates a dropdown of 15 years to control year,
@@ -37,7 +40,7 @@
           close: 'Ok',
           closeOnSelect: false // Close upon selecting a date,
         });
-      $('.button-collapse').sideNav({
+      $('.button-collapse').sidenav({
       menuWidth: 300, // Default is 300
       edge: 'left', // Choose the horizontal origin
       closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
@@ -52,6 +55,17 @@
         hoverEnabled: true, // Hover enabled
         toolbarEnabled: false // Toolbar transition enabled
       });
+
+      $(".dropdown-trigger").dropdown({
+        hover: true,
+        coverTrigger: false,
+        beloworigin: true
+        });
+
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+
     </script>
     </body>
 </html>
