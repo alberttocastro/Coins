@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-
+    before_action :authorization
     def new   
         @address = Address.new
 
@@ -50,8 +50,15 @@ class AddressesController < ApplicationController
         redirect_to addresses_path
     end
 
-    private def address_params
+    private
+    
+    def address_params
         params.require(:address).permit(:neighborhood, :street, :nationality_id, :idiom_id, :name, :isvalid, :isvisitable, :isvisited, :adrstype_id, :comments, :references, :publisher_id, :macroregion_id, :group_id, :second_language, :card_number)
     end
+
+    def authorization
+        authorize current_user, :admin?
+    end
+    
 
 end
