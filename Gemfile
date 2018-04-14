@@ -72,6 +72,9 @@ gem 'material_icons'
 
 gem 'prawn'
 
+#permissions policies
+gem "pundit"
+
 #Please add the following to your Gemfile to avoid polling for changes:
  gem 'wdm', '>= 0.1.0'
 
