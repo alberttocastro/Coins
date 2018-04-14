@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'user/sessions', registrations: 'user/registrations', confirmations: 'user/confirmations', passwords: 'user/passwords', unlocks: 'user/unlocks'}
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords', unlocks: 'users/unlocks'}
 
   get 'home/index'
 

@@ -17,15 +17,19 @@
     </head>
   <body>
   <%# Navbar %>
-  <%= render 'partials/navbar'%>
+  <% if user_signed_in? %>
+    <%= render 'partials/navbar'%>
+  <%end%>
 
   <main>
  <%# Body %>
     <%= yield %>
 
   </main>
-<%# Footer %>
-  <%= render 'partials/footer'%>
+  <%# Footer %>
+  <% if user_signed_in? %>
+    <%= render 'partials/footer'%>
+  <% end %>
 
     <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> %>
     <script>
