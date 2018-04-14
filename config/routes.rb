@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {, controllers: { sessions: 'user/sessions', registrations: 'user/registrations', confirmations: 'user/confirmations', passwords: 'user/passwords', unlocks: 'user/unlocks', :omniauth_callbacks => "user/omniauth_callbacks"}}
+
   get 'home/index'
 
   get 'welcome/index'
