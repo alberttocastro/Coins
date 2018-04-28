@@ -1,32 +1,56 @@
-  <%# Dropdown structure %>
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Enter</a></li>
-    <li><a href="#!">Register</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Help</a></li>
-  </ul>
 <header>
-  <nav class="nav-wrapper light-blue darken-4 z-depth-3">
-    <%= link_to 'coins database', root_path, class: "brand-logo" %>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <% if user_signed_in? %>
-        <li><%= link_to 'Addresses', addresses_path, class: "nav-link" %></li>
-        <li><%= link_to 'Cultures', cultures_path, class: "nav-link" %></li>
-        <li><%= link_to 'Characteristics', characteristics_path, class: "nav-link" %></li>
-        <li><%= link_to 'Telephones', telephones_path, class: "nav-link" %></li>
-        <li><%= link_to 'Groups', groups_path, class: "nav-link" %></li>
-        <li><%= link_to 'Publishers', publishers_path, class: "nav-link" %></li>
-        <li><%= link_to 'Cards', cards_path, class: "nav-link" %></li>
+  <nav class="nav-extended light-blue darken-4 z-depth-3">
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <div class="nav-wrapper">
+      <%= link_to root_path, class: "brand-logo" do %>
+        <div class="hide-on-med-and-down"> Coins Database </div>
+        <div class="hide-on-large-only">Coins </div>  
       <% end %>
-
-      <%# Authentication dropdown %>
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Signin<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>    
+          <li><%=  link_to edit_user_registration_path do %> Profile <% end %></li>
+          <li> <%= link_to destroy_user_session_path, method: :delete do %> Log Out <% end %> </li>
+        <% else %>
+          <li><%= link_to new_user_session_path do %> Enter<% end %> </li>
+          <li><%= link_to new_user_registration_path do %> Register <% end %> </li>
+        <%end%>
+      </ul>
+    </div>
+    <% if user_signed_in? %>
+      <div class="nav=content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><%= link_to 'Addresses', addresses_path, class: "nav-link", id:"addresses" %></li>
+          <li class="tab"><%= link_to 'Cultures', cultures_path, class: "nav-link", id: "cultures" %></li>
+          <li class="tab"><%= link_to 'Characteristics', characteristics_path, class: "nav-link", id: "characteristics" %></li>
+          <li class="tab"><%= link_to 'Telephones', telephones_path, class: "nav-link", id:"telephones" %></li>
+          <li class="tab"><%= link_to 'Groups', groups_path, class: "nav-link", id:"groups"  %></li>
+          <li class="tab"><%= link_to 'Publishers', publishers_path, class: "nav-link", id: "publishers" %></li>
+          <li class="tab"><%= link_to 'Cards', cards_path, class: "nav-link", id:"class" %></li>
+        </ul>
+      </div>
+    <% end %>
   </nav>
 
   <ul id="slide-out" class="sidenav">
+  <% if user_signed_in? %> 
+    <li>
+      <div class="user-view">
+        <span class="black-text name">Alberto Castro</span>
+        <span class="black-text email">albertto.castro@gmail.com</span>
+        <span class="black-text email">Group 2</span>
+      </div>
+    </li>
+  <%end%>
+  <li><div class="divider"></div></li>
+  <% if user_signed_in? %>    
+    <li><%=  link_to edit_user_registration_path do %> Profile <% end %></li>
+    <li> <%= link_to destroy_user_session_path, method: :delete do %> Log Out <% end %> </li>
+  <% else %>
+    <li><%= link_to new_user_session_path do %> Enter<% end %> </li>
+    <li><%= link_to new_user_registration_path do %> Register <% end %> </li>
+  <%end%>
+  
+    <!-- Comentado os itens que estão no extende navbar
     <li><%= link_to 'Addresses', addresses_path, class: "nav-link" %></li>
     <li><%= link_to 'Cultures', cultures_path, class: "nav-link" %></li>
     <li><%= link_to 'Characteristics', characteristics_path, class: "nav-link" %></li>
@@ -34,6 +58,7 @@
     <li><%= link_to 'Groups', groups_path, class: "nav-link" %></li>
     <li><%= link_to 'Publishers', publishers_path, class: "nav-link" %></li>
     <li><%= link_to 'Cards', cards_path, class: "nav-link" %></li>
+    -->
   </ul>
 
 </header>
