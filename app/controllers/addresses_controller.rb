@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
     before_action :authorization, only: [:destory]
+    before_action :authenticate_user!
     def new   
         @address = Address.new
 

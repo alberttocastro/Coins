@@ -1,5 +1,5 @@
 class TelephonesController < ApplicationController
-
+    before_action :authenticate_user!
     def new   
         @telephone = Telephone.new
     end

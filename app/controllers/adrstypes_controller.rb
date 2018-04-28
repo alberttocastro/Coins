@@ -1,5 +1,5 @@
 class AdrstypesController < ApplicationController
-
+    before_action :authenticate_user!
     def new   
         @adrstype = Adrstype.new
     end

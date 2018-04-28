@@ -1,5 +1,5 @@
 class PublishersController < ApplicationController
-    
+    before_action :authenticate_user!
     def new   
         @publisher = Publisher.new
     end

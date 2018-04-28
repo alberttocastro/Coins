@@ -1,5 +1,5 @@
 class NationalitiesController < ApplicationController
-
+    before_action :authenticate_user!
     def new   
         @nationality = Nationality.new
     end

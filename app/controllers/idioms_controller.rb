@@ -1,5 +1,5 @@
 class IdiomsController < ApplicationController
-
+    before_action :authenticate_user!
 
     def new   
         @idiom = Idiom.new
