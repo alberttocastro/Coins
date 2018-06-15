@@ -1,61 +1,234 @@
 <!-- <!DOCTYPE html> -->
 <html>
-	<head>
 
-		<meta charset="UTF-8">
+<head>
 
-		<!-- <link rel="shortcut icon" /> -->
+	<meta charset="UTF-8">
 
-		<title>Coins</title>
+	<!-- <link rel="shortcut icon" /> -->
 
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<title>Coins</title>
 
-		<link type="text/css" rel="stylesheet" href="materialize/stylesheets/materialize.css"  media="screen,projection"/>
-		<link rel="stylesheet" type="text/css" href="stylesheets/application.css"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+	<link type="text/css" rel="stylesheet" href="materialize/stylesheets/materialize.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/application.css" />
 
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-		<main>
-			<nav class="nav-extended">
-				<div class="nav-wrapper">
-				  <a href="#" class="brand-logo">Coins</a>
-				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-				  <ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="sass.html">Sass</a></li>
-					<li><a href="badges.html">Components</a></li>
-					<li><a href="collapsible.html">JavaScript</a></li>
-				  </ul>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body class="grey lighten-2">
+	<main>
+		<nav class="nav-extended navbar-dark indigo darken-2">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Coins</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+					<i class="material-icons">menu</i>
+				</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li>
+						<a href="sass.html">Sass</a>
+					</li>
+					<li>
+						<a href="badges.html">Components</a>
+					</li>
+					<li>
+						<a href="collapsible.html">JavaScript</a>
+					</li>
+				</ul>
+			</div>
+			<div class="nav-content">
+				<ul class="tabs tabs-transparent">
+					<li class="tab">
+						<a href="#all">Territories</a>
+					</li>
+					<li class="tab">
+						<a href="#assignments" class="active">Assignments</a>
+					</li>
+					<li class="tab">
+						<a href="#telephones">Telephones</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<ul class="sidenav" id="mobile-demo">
+			<li>
+				<a href="sass.html">Sass</a>
+			</li>
+			<li>
+				<a href="badges.html">Components</a>
+			</li>
+			<li>
+				<a href="collapsible.html">JavaScript</a>
+			</li>
+		</ul>
+
+
+		<!-- ABA 1 -->
+		<div id="all" class="col s12">
+				<div class="container">
+					<ul class="collection with-header">
+						<li class="collection-header">
+							<div class="row">
+								<div class="col s8 m8 l10">
+									<h4>
+										<b>#</b>
+										1 - Barbalho
+									</h4>
+								</div>
+								<div class="col s4 m4 l2">
+									<div class="valign-wrapper">
+										<a href="#">
+											<i class="material-icons">edit</i>
+										</a>
+										<a href="#">
+											<i class="material-icons">delete</i>
+										</a>
+										<a href="#">
+											<i class="material-icons">print</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="collection-item amber lighten-1">
+							(Barbalho) Rua anfilófio de Carvalho -
+							<i> Centro Histórico</i>.
+							<b> Visited by: Alberto </b>
+							<a>
+								<i class="material-icons">send</i>
+							</a>
+						</li>
+					</ul>
 				</div>
-				<div class="nav-content">
-				  <ul class="tabs tabs-transparent">
-					<li class="tab"><a href="#test1">Test 1</a></li>
-					<li class="tab"><a class="active" href="#test2">Test 2</a></li>
-					<li class="tab"><a href="#test4">Test 4</a></li>
-				  </ul>
-				</div>
-			  </nav>
-			
-			  <ul class="sidenav" id="mobile-demo">
-				<li><a href="sass.html">Sass</a></li>
-				<li><a href="badges.html">Components</a></li>
-				<li><a href="collapsible.html">JavaScript</a></li>
-			  </ul>
-			
-			  <div id="test1" class="col s12">Test 1</div>
-			  <div id="test2" class="col s12">Test 2</div>
-			  <div id="test4" class="col s12">Test 4</div>
-			
+			</div>
 
-			</main>
+		<!-- ABA 2 -->
+		<div id="assignments" class="col s12">
+			<div class="container" style="width: 95%">
+				
+				<div class="row">
+					<div class="col s12 m6">
+						<div class="card grey lighten-5">
+							<div class="card-content indigo-text text-darken-4" style="padding: 18">
+								<span class="card-title">
+									<div class="row">
+										<div class="col s2" style="padding-left: 0%"><i class="material-icons Medium">location_on</i></div>
+										<div class="col s10" style="vertical-align:middle;">
+											<b>Barra 1</b>
+										</div>
+									</div>
+								</span>
+								<table class="responsive-table" style="table-layout: fixed;">
+									<thead>
+										<tr class="indigo-text text-darken-4">
+											<th>Name</th>
+											<th>Cntry</th>
+											<th colspan="2" style="height: 120px;">Addr</th>
+											<th>Ref</th>
+											<th>Obs</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody class="indigo-text text-darken-4">
+										<tr>
+											<td>Alberto</td>
+											<td>Brazilian</td>
+											<td colspan="2" style="max-width: 300px;white-space:normal; height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
+											<td>Close to ICEIA theatre</td>
+											<td>Very american-like</td>
+											<th style="height: 100px;"><a class="waves-effect waves-light btn modal-trigger indigo lighten-2" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+										</tr>
+										<tr>
+											<td>Alberto</td>
+											<td>Brazilian</td>
+											<td colspan="2" style="max-width: 300px;white-space:normal;height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
+											<td>Close to ICEIA theatre</td>
+											<td>Very american-like</td>
+											<th style="height: 100px;"><a class="waves-effect waves-light btn modal-trigger indigo darken-1" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+										</tr>
+										<tr>
+											<td>Alberto</td>
+											<td>Brazilian</td>
+											<td colspan="2" style="max-width: 300px;white-space:normal;height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
+											<td>Close to ICEIA theatre</td>
+											<td>Very american-like</td>
+											<th style="height: 100px;"><a class="waves-effect waves-light btn modal-trigger blue darken-3" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="card-action">
+								<a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
 			
-			<script src="materialize/javascripts/jQuery.js"></script>
+			</div>
+
+			  <!-- Modal Structure -->
+			<div id="modal1" class="modal">
+				<div class="modal-content">
+					<h4>Add a report</h4> <br>
+					<div class="input-field col s12">
+						<textarea id="textarea1" class="materialize-textarea"></textarea>
+						<label for="textarea1">Your report</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+				</div>
+			</div>
+		</div>
+		
+
+
+		<!-- ABA 3 -->
+		<div id="telephones" class="col s12">
 			
-			<!-- <script src="materialize/javascripts/materialize.min.js"></script> -->
-			<script src="javascripts/application.js"></script>	
-			<script src="materialize/javascripts/materialize.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script> -->
-    </body>
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m6">
+						<div class="card grey lighten-5">
+							<div class="card-content indigo-text text-darken-4" style="padding: 14;padding-top: 20; padding-left: 18">
+								<span class="card-title">
+									<div class="row" style="margin-bottom: 0;">
+										<div class="col s2" style="padding-left: 0%"><i class="material-icons Medium">local_phone</i></div>
+										<div class="col s10" style="vertical-align:middle; padding-left: 30px">
+											<b>Phone Numbers</b>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+
+		<div class="fixed-action-btn">
+			<a class="btn-floating btn-large blue lighten-2">
+				<i class="material-icons Large">add</i>
+			</a>
+			<ul>
+				<li><a class="btn-floating blue"><i class="material-icons">border_color</i></a><b>Note</b></li>
+				<li><a class="btn-floating blue"><i class="material-icons">local_phone</i></a><b>Phone</b></li>
+				<li><a class="btn-floating blue"><i class="material-icons">art_track</i></a><b>Address</b></li>
+			</ul>
+		</div>
+
+
+	</main>
+
+	<script src="materialize/javascripts/jQuery.js"></script>
+	<script src="javascripts/application.js"></script>
+	<script src="materialize/javascripts/materialize.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
 </html>
