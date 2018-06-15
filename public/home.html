@@ -20,38 +20,40 @@
 
 <body class="grey lighten-2">
 	<main>
-		<nav class="nav-extended navbar-dark indigo darken-2">
-			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">Coins</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger">
-					<i class="material-icons">menu</i>
-				</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li>
-						<a href="sass.html">Sass</a>
-					</li>
-					<li>
-						<a href="badges.html">Components</a>
-					</li>
-					<li>
-						<a href="collapsible.html">JavaScript</a>
-					</li>
-				</ul>
-			</div>
-			<div class="nav-content">
-				<ul class="tabs tabs-transparent">
-					<li class="tab">
-						<a href="#all">Territories</a>
-					</li>
-					<li class="tab">
-						<a href="#assignments" class="active">Assignments</a>
-					</li>
-					<li class="tab">
-						<a href="#telephones">Telephones</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		<div class="navbar-fixed">
+			<nav class="nav-extended navbar-dark indigo darken-2">
+				<div class="nav-wrapper">
+					<a href="#" class="brand-logo">Coins</a>
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+						<i class="material-icons">menu</i>
+					</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li>
+							<a href="sass.html">Sass</a>
+						</li>
+						<li>
+							<a href="badges.html">Components</a>
+						</li>
+						<li>
+							<a href="collapsible.html">JavaScript</a>
+						</li>
+					</ul>
+				</div>
+				<div class="nav-content">
+					<ul class="tabs tabs-transparent">
+						<li class="tab">
+							<a href="#all">Territories</a>
+						</li>
+						<li class="tab">
+							<a href="#assignments" class="active">Assignments</a>
+						</li>
+						<li class="tab">
+							<a href="#telephones" >Telephones</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 
 		<ul class="sidenav" id="mobile-demo">
 			<li>
@@ -67,57 +69,57 @@
 
 
 		<!-- ABA 1 -->
-		<div id="all" class="col s12">
-				<div class="container">
-					<ul class="collection with-header">
-						<li class="collection-header">
-							<div class="row">
-								<div class="col s8 m8 l10">
-									<h4>
-										<b>#</b>
-										1 - Barbalho
-									</h4>
-								</div>
-								<div class="col s4 m4 l2">
-									<div class="valign-wrapper">
-										<a href="#">
-											<i class="material-icons">edit</i>
-										</a>
-										<a href="#">
-											<i class="material-icons">delete</i>
-										</a>
-										<a href="#">
-											<i class="material-icons">print</i>
-										</a>
-									</div>
+		<div id="all" class="col s12" style="margin-top: 60px">
+			<div class="container">
+				<ul class="collection with-header">
+					<li class="collection-header">
+						<div class="row">
+							<div class="col s8 m8 l10">
+								<h4>
+									<b>#</b>
+									1 - Barbalho
+								</h4>
+							</div>
+							<div class="col s4 m4 l2">
+								<div class="valign-wrapper">
+									<a href="#">
+										<i class="material-icons">edit</i>
+									</a>
+									<a href="#">
+										<i class="material-icons">delete</i>
+									</a>
+									<a href="#">
+										<i class="material-icons">print</i>
+									</a>
 								</div>
 							</div>
-						</li>
-						<li class="collection-item amber lighten-1">
-							(Barbalho) Rua anfilófio de Carvalho -
-							<i> Centro Histórico</i>.
-							<b> Visited by: Alberto </b>
-							<a>
-								<i class="material-icons">send</i>
-							</a>
-						</li>
-					</ul>
-				</div>
+						</div>
+					</li>
+					<li class="collection-item amber lighten-1">
+						(Barbalho) Rua anfilófio de Carvalho -
+						<i> Centro Histórico</i>.
+						<b> Visited by: Alberto </b>
+						<a>
+							<i class="material-icons">send</i>
+						</a>
+					</li>
+				</ul>
 			</div>
+		</div>
 
 		<!-- ABA 2 -->
-		<div id="assignments" class="col s12">
+		<div id="assignments" class="col s12" style="margin-top: 60px">
 			<div class="container" style="width: 95%">
 				
 				<div class="row">
 					<div class="col s12 m6">
 						<div class="card grey lighten-5">
-							<div class="card-content indigo-text text-darken-4" style="padding: 18">
+							<div class="card-content indigo-text text-darken-4" style="padding: 18; padding-bottom: 0;">
 								<span class="card-title">
 									<div class="row">
 										<div class="col s2" style="padding-left: 0%"><i class="material-icons Medium">location_on</i></div>
 										<div class="col s10" style="vertical-align:middle;">
-											<b>Barra 1</b>
+											<h4 style="margin-top: 0px"><b>Barra 1</b></h4>
 										</div>
 									</div>
 								</span>
@@ -139,7 +141,7 @@
 											<td colspan="2" style="max-width: 300px;white-space:normal; height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
 											<td>Close to ICEIA theatre</td>
 											<td>Very american-like</td>
-											<th style="height: 100px;"><a class="waves-effect waves-light btn modal-trigger indigo lighten-2" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+											<th style="height: 75px;"><a class="waves-effect waves-light btn modal-trigger indigo lighten-2" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
 										</tr>
 										<tr>
 											<td>Alberto</td>
@@ -147,7 +149,7 @@
 											<td colspan="2" style="max-width: 300px;white-space:normal;height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
 											<td>Close to ICEIA theatre</td>
 											<td>Very american-like</td>
-											<th style="height: 100px;"><a class="waves-effect waves-light btn modal-trigger indigo darken-1" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+											<th style="height: 75px;"><a class="waves-effect waves-light btn modal-trigger indigo darken-1" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
 										</tr>
 										<tr>
 											<td>Alberto</td>
@@ -155,7 +157,65 @@
 											<td colspan="2" style="max-width: 300px;white-space:normal;height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
 											<td>Close to ICEIA theatre</td>
 											<td>Very american-like</td>
-											<th style="height: 100px;"><a class="waves-effect waves-light btn modal-trigger blue darken-3" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+											<th style="height: 75px;"><a class="waves-effect waves-light btn modal-trigger blue darken-3" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="card-action">
+								<a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col s12 m6">
+						<div class="card grey lighten-5">
+							<div class="card-content indigo-text text-darken-4" style="padding: 18; padding-bottom: 0;">
+								<span class="card-title">
+									<div class="row">
+										<div class="col s2" style="padding-left: 0%"><i class="material-icons Medium">location_on</i></div>
+										<div class="col s10" style="vertical-align:middle;">
+											<h4 style="margin-top: 0px"><b>Barra 1</b></h4>
+										</div>
+									</div>
+								</span>
+								<table class="responsive-table" style="table-layout: fixed;">
+									<thead>
+										<tr class="indigo-text text-darken-4">
+											<th>Name</th>
+											<th>Cntry</th>
+											<th colspan="2" style="height: 120px;">Addr</th>
+											<th>Ref</th>
+											<th>Obs</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody class="indigo-text text-darken-4">
+										<tr>
+											<td>Alberto</td>
+											<td>Brazilian</td>
+											<td colspan="2" style="max-width: 300px;white-space:normal; height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
+											<td>Close to ICEIA theatre</td>
+											<td>Very american-like</td>
+											<th style="height: 75px;"><a class="waves-effect waves-light btn modal-trigger indigo lighten-2" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+										</tr>
+										<tr>
+											<td>Alberto</td>
+											<td>Brazilian</td>
+											<td colspan="2" style="max-width: 300px;white-space:normal;height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
+											<td>Close to ICEIA theatre</td>
+											<td>Very american-like</td>
+											<th style="height: 75px;"><a class="waves-effect waves-light btn modal-trigger indigo darken-1" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
+										</tr>
+										<tr>
+											<td>Alberto</td>
+											<td>Brazilian</td>
+											<td colspan="2" style="max-width: 300px;white-space:normal;height: 120px;">Rua Anfilófio de Carvalho, 57, Ed da Verdade, Ap 101</td>
+											<td>Close to ICEIA theatre</td>
+											<td>Very american-like</td>
+											<th style="height: 75px;"><a class="waves-effect waves-light btn modal-trigger blue darken-3" style="float:left" href="#modal1">Report</a><span class="badge" style="float: left;">1</span></th>
 										</tr>
 									</tbody>
 								</table>
@@ -188,10 +248,10 @@
 
 
 		<!-- ABA 3 -->
-		<div id="telephones" class="col s12">
+		<div id="telephones" class="col s12" style="margin-top: 60px">
 			
-			<div class="container">
-				<div class="row">
+			<div class="container" >
+				<div class="row" style="margin-bottom: 0;">
 					<div class="col s12 m6">
 						<div class="card grey lighten-5">
 							<div class="card-content indigo-text text-darken-4" style="padding: 14;padding-top: 20; padding-left: 18">
@@ -207,9 +267,102 @@
 						</div>
 					</div>
 				</div>
+			
+				<div class="row" style="margin-bottom: 0;">
+					<div class="col s12 m6">
+						<div class="card grey lighten-5">
+							<div class="card-content indigo-text text-darken-4" style="padding: 14;padding-top: 20; padding-left: 18">
+								<div class="row" style="text-align: center">
+									<h4><b>(71) 99232-3298</b></h4>
+									<p>Jorge Fernantes - Professor de inglês.</p>
+									<p>Rua pereira fontes, 57, Alto do Peru</p>
+								</div>
+								<div class="row">
+									<div class="col s6" >
+										<a class="waves-effect waves-light btn blue darken-3" style="display: flex; justify-content: center;" href="tel:+5571992323298" >
+											<i class="material-icons">local_phone</i> Call
+										</a>
+									</div>
+									<div class="col s6">
+										<a class="waves-effect waves-light btn modal-trigger blue darken-3" style="display: flex; justify-content: center;" href="#modal2">
+											<i class="material-icons">mode_edit</i><p>Report</p> 
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom: 0;">
+					<div class="col s12 m6">
+						<div class="card grey lighten-5">
+							<div class="card-content indigo-text text-darken-4" style="padding: 14;padding-top: 20; padding-left: 18">
+								<div class="row" style="text-align: center">
+									<h4><b>(71) 99232-3298</b></h4>
+									<p>Jorge Fernantes - Professor de inglês.</p>
+									<p>Rua pereira fontes, 57, Alto do Peru</p>
+								</div>
+								<div class="row">
+									<div class="col s6" >
+										<a class="waves-effect waves-light btn blue darken-3" style="display: flex; justify-content: center;" href="tel:+5571992323298" >
+											<i class="material-icons">local_phone</i> Call
+										</a>
+									</div>
+									<div class="col s6">
+										<a class="waves-effect waves-light btn modal-trigger blue darken-3" style="display: flex; justify-content: center;" href="#modal2">
+											<i class="material-icons">mode_edit</i><p>Report</p> 
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom: 0;">
+					<div class="col s12 m6">
+						<div class="card grey lighten-5">
+							<div class="card-content indigo-text text-darken-4" style="padding: 14;padding-top: 20; padding-left: 18">
+								<div class="row" style="text-align: center">
+									<h4><b>(71) 99232-3298</b></h4>
+									<p>Jorge Fernantes - Professor de inglês.</p>
+									<p>Rua pereira fontes, 57, Alto do Peru</p>
+								</div>
+								<div class="row">
+									<div class="col s6" >
+										<a class="waves-effect waves-light btn blue darken-3" style="display: flex; justify-content: center;" href="tel:+5571992323298" >
+											<i class="material-icons">local_phone</i> Call
+										</a>
+									</div>
+									<div class="col s6">
+										<a class="waves-effect waves-light btn modal-trigger blue darken-3" style="display: flex; justify-content: center;" href="#modal2">
+											<i class="material-icons">mode_edit</i><p>Report</p> 
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Modal Structure -->
+			<div id="modal2" class="modal">
+				<div class="modal-content">
+					<h4>Add a report</h4> <br>
+					<div class="input-field col s12">
+						<textarea id="textarea1" class="materialize-textarea"></textarea>
+						<label for="textarea1">Your report</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+				</div>
 			</div>
-		
-		</div>
+			
+			</div> <!-- Container -->
+		</div> <!-- Aba 3 -->
 
 		<div class="fixed-action-btn">
 			<a class="btn-floating btn-large blue lighten-2">
