@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: Territory_development
-  # username: postgres
-  # password: admin
+   username: postgres
+   password: admin
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,6 +60,8 @@ development:
 test:
   <<: *default
   database: Territory_test
+     username: postgres
+   password: admin
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,5 +85,8 @@ test:
 production:
   <<: *default
   database: Territory_production
-  username: Territory
-  password: <%= ENV['TERRITORY_DATABASE_PASSWORD'] %>
+  
+     username: postgres
+   password: admin
+  #username: Territory
+  #password: <%= ENV['TERRITORY_DATABASE_PASSWORD'] %>
