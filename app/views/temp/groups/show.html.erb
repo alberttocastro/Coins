@@ -1,0 +1,28 @@
+<div class="container">
+    <% begin %>
+      <% @conductor = Publisher.find(@group.conductor) %>
+    <% rescue ActiveRecord::RecordNotFound %>
+      <% @conductor = Publisher.new(name: "unknown")%>
+    <% end %>
+
+    <% begin %>
+      <% @helper = Publisher.find(@group.helper) %>
+    <% rescue ActiveRecord::RecordNotFound %>
+      <% @helper = Publisher.new(name: "unknown")%>
+    <% end %>
+
+<h3><strong>Group </strong><%= @group.number %> - <strong>Conductor:</strong>  <%= @conductor.name %></h3>
+<ul class="collection">
+<%Publisher.where("group_id = ?", @group.id).each do |publisher| %>
+  <%@counter = 0%>
+  <%Address.where("publisher_id = ?", publisher.id).each do |address| %>
+    <%if address.isvisited%>
+      <%@counter = @counter +1%>
+    <%end%>
+  <%end%>
+
+  <li class="collection-item"><span class="badge"><%=@counter%></span> <%= publisher.name%> </li>
+<%end%>
+</ul>
+<%= link_to groups_path, class:"btn-floating  waves-effect waves-light blue-grey darken-4" do %><i class="material-icons"> arrow_back </i> <%end%>
+</div>

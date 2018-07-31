@@ -1,0 +1,15 @@
+
+
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Addresses Types</h4> </li>
+
+  <% @adrstypes.each do |adrstype| %>
+    <li class="collection-item">
+      <%= adrstype.typename %>
+     
+      <%= link_to "Edit", edit_adrstype_path(adrstype) %>
+      <%= link_to "Destroy", adrstype_path(adrstype), method: :delete, data:{confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to new_adrstype_path, class:"btn-floating waves-effect waves-light red right" do%><i class="material-icons">add</i> <%end%>
