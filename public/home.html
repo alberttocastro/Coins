@@ -132,7 +132,7 @@
 									<li>
 										<div class="collapsible-header">
 											<i class="material-icons">contacts
-												</i>Rua Das Flores Azuis, 77, Ed Turismo, Ap 202
+											</i>Rua Das Flores Azuis, 77, Ed Turismo, Ap 202
 										</div>
 										<div class="collapsible-body">
 											<p>Name: John Doe</p> 
@@ -172,24 +172,48 @@
 				</div>
 			</div>
 			
-
-			
-			
-		</main>
-		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large blue lighten-2">
-				<i class="material-icons Large">add</i>
-			</a>
-			<ul>
-				<li><a class="btn-floating blue"><i class="material-icons">border_color</i></a><b>Note</b></li>
-				<li><a class="btn-floating blue"><i class="material-icons">art_track</i></a><b>Address</b></li>
-			</ul>
+			<!-- Moda de adicionar endereço -->
+			<div id="add-territory-modal" class="modal">
+				<div class="modal-content">
+					<h4>Add a new territory</h4> <br>
+					<div class="input-field col s12">
+						<textarea id="textarea-address" class="materialize-textarea"></textarea>
+						<label for="textarea-address">Address</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="textarea-reference" type="text" class="validate">
+						<label for="textarea-reference">Reference</label>
+					</div>
+					<div class="input-field col s12">
+						<textarea id="textarea-notes" class="materialize-textarea"></textarea>
+						<label for="textarea-notes">Notes</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+				</div>
+			</div>
 		</div>
 		
-		<script src="materialize/javascripts/jQuery.js"></script>
-		<script src="javascripts/application.js"></script>
-		<script src="materialize/javascripts/materialize.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	</body>
+		
+		
+		
+	</main>
+	<div class="fixed-action-btn">
+		<a class="btn-floating btn-large blue lighten-2">
+			<i class="material-icons Large">add</i>
+		</a>
+		<ul>
+			<li><a class="btn-floating blue"><i class="material-icons">border_color</i></a><b>Note</b></li>
+			<li><a class="btn-floating blue modal-trigger" href="#add-territory-modal"><i class="material-icons">art_track</i></a><b>Address</b></li>
+		</ul>
+	</div>
 	
-	</html>
+	<script src="materialize/javascripts/jQuery.js"></script>
+	<script src="javascripts/application.js"></script>
+	<script src="materialize/javascripts/materialize.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>
