@@ -72,6 +72,9 @@ gem 'material_icons'
 
 gem 'prawn'
 
+# Inclua nas versões quando rails >= 5.1 
+gem 'jquery-rails'
+
 #permissions policies
 gem "pundit"
 
