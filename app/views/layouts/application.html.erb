@@ -16,14 +16,11 @@
   
 </head>
 <body class="grey lighten-2">
-  <header>
-    <%= @navbar.nil? ? nil : render(@navbar) %>
-  </header>
-  <main>
-    <%# Body %>
-    <%= yield %>
-    
-  </main>
+
+  <%= @navbar.nil? ? nil : render(@navbar) %>
+  <%= render "partials/sidenav" %>
+  <%# Body %>
+  <%= yield %>
 
   <%# Footer %>
   <%= render 'partials/footer'%>
