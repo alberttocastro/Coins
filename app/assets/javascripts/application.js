@@ -51,7 +51,7 @@ $(document).ready(function(){
       toolbarEnabled: false // Toolbar transition enabled
     });
     
-      $('.sidenav').sidenav();
+    $(".button-collapse").sideNav();
 
       $("#dropdown-trigger").dropdown({
         hover: true,
