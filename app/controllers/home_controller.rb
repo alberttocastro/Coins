@@ -1,17 +1,17 @@
 class HomeController < ApplicationController
   #before_action :authenticate_user!, only: [:cultures, :characteristics]
   def index
-    @navbar = "partials/navbar-home"
+    @navbar = "partials/navbar/navbar-home"
     render "index"
   end
 
   def overview
-    @navbar = "partials/navbar-overview"
+    @navbar = "partials/navbar/navbar-overview"
     render "overview"
   end
 
   def assignments
-    @navbar = "partials/navbar-assignments"
+    @navbar = "partials/navbar/navbar-assignments"
     render "assignments"
   end
 
