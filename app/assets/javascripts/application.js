@@ -24,6 +24,8 @@ $(document).ready(function(){
 
     console.log("Passei aqui");
 
+    $('.modal').modal();
+
     $('select').formSelect();
 
     $('.datepicker').datepicker({
