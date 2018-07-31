@@ -64,7 +64,7 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 
-gem 'materialize-sass', '~> 1.0.0.beta'
+gem 'materialize-sass'
 
 gem 'material_icons'
 
