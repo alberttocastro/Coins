@@ -82,3 +82,6 @@ gem "pundit"
 #  gem 'wdm', '>= 0.1.0'
 
  gem 'bcrypt', platforms: :ruby
+
+# Gem para gerar o favicon e fazer o webapp
+ gem 'rails_real_favicon'
