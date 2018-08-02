@@ -15,6 +15,10 @@ class HomeController < ApplicationController
     render "assignments"
   end
 
+  def login
+    
+  end
+
 end
 
 
