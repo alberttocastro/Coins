@@ -53,6 +53,11 @@
 <!-- ABA 2 -->
 <div id="dashboard" class="col s12" style="margin-top: 60px">
     <div class="container">
+
+        <h3 class="blue-text text-lighten-3"><b>Charts</b></h3>
+        <div class="divider"></div>
+        <div class="col"></div>
+        <h4 class="blue-text ">By Country</h4>
         
         <canvas id="foreigners-by-country" width="400" height="400"></canvas>
         <script>
@@ -86,6 +91,12 @@
             });
         </script>
         <br>
+
+        <div class="divider"></div>
+        <%# Título %>
+        <div class="col"></div>
+        <h4 class="blue-text ">Regions and attendance</h4>
+
         <canvas id="foreigners-by-region" width="400" height="400"></canvas>
         <script>
             var ctx = document.getElementById("foreigners-by-region");
