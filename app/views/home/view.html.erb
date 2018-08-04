@@ -1,2 +1,15 @@
+<% content_for :header do %>
+    <div class="navbar-fixed">
+        <nav class=" navbar-dark indigo darken-2 z-depth-2">
+            <div class="nav-wrapper">
+                <a href="home.html" class="brand-logo">Address</a>
+                <%= link_to home_path, class:"sidenav-trigger" do %>
+                    <i class="material-icons">arrow_back</i>
+                <%- end  %>                
+            </div>            
+        </nav>
+    </div>
+<% end %>
+
 <h1>Home#view</h1>
 <p>Find me in app/views/home/view.html.erb</p>
