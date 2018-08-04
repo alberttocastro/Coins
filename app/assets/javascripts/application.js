@@ -32,7 +32,6 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
 
   $('.tabs').tabs({
-    swipeable: true
   });
   
   $('.tabs-content.carousel.carousel-slider').css("height","auto");
