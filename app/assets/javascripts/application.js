@@ -19,10 +19,13 @@
 //= require materialize-sprockets
 //= require_tree .
 
-
-
 $(document).ready(function(){
   
+  // Trocando a cor de fundo da aplicação caso não seja a tela de login
+  if(window.location.pathname != "/login"){
+    $("body").addClass("grey lighten-3")
+  }
+
   console.log("Passei aqui");
   
   $('.modal').modal();
