@@ -3,8 +3,85 @@
     <%# render "partials/navbar-home" %>
 <%# end %>
 
+<div style="margin-top: 60px"></div>
+
+<!-- ABA de territórios designados -->
+<div id="assgn" class="col s12 m12 l12" >
+        <div class="container">
+            <%# Cartão %>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card grey lighten-5 z-depth-2">
+                        <div class="card-content indigo-text text-darken-4">
+                            <span class="card-title">
+                                <div class="row">
+                                    <div class="col s2" style="padding-left: 0%"><i class="material-icons medium">location_on</i></div>
+                                    <div class="col s10" style="vertical-align:middle;">
+                                        <h4 style="margin-top: 0px"><b>Barra 1</b></h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <ul class="collapsible z-depth-0">
+                                <li>
+                                    <div class="collapsible-header">
+                                        <i class="material-icons">contacts</i>Rua Almeida Brandini, 57, Ed da Verdade, Ap 101
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <p>Name: John Doe</p> 
+                                        <p>Country: American</p>
+                                        <p>Ref: Close to the square</p>
+                                        <p>Obs: Born in Italy</p> <br>
+                                        <div>
+                                            <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Report</a><span class="badge" >1</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header">
+                                        <i class="material-icons">contacts
+                                        </i>Rua Das Flores Azuis, 77, Ed Turismo, Ap 202
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <p>Name: John Doe</p> 
+                                        <p>Country: American</p>
+                                        <p>Ref: Close to the square</p>
+                                        <p>Obs: Born in Italy</p> <br>
+                                        <div>
+                                            <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Report</a><span class="badge" >1</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        
+                        <div class="card-action">
+                            <a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Add a report</h4> <br>
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Your report</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
 <!-- ABA de informações -->
-<div id="info" class="col s12" style="margin-top: 60px">
+<div id="info" class="col s12 m12 l12" >
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
@@ -34,81 +111,7 @@
     </div>
 </div>
     
-<!-- ABA de territórios designados -->
-<div id="assgn" class="col s12" style="margin-top: 60px">
-    <div class="container">
-        <%# Cartão %>
-        <div class="row">
-            <div class="col s12">
-                <div class="card grey lighten-5 z-depth-2">
-                    <div class="card-content indigo-text text-darken-4">
-                        <span class="card-title">
-                            <div class="row">
-                                <div class="col s2" style="padding-left: 0%"><i class="material-icons medium">location_on</i></div>
-                                <div class="col s10" style="vertical-align:middle;">
-                                    <h4 style="margin-top: 0px"><b>Barra 1</b></h4>
-                                </div>
-                            </div>
-                        </span>
-                        <ul class="collapsible z-depth-0">
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="material-icons">contacts</i>Rua Almeida Brandini, 57, Ed da Verdade, Ap 101
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Name: John Doe</p> 
-                                    <p>Country: American</p>
-                                    <p>Ref: Close to the square</p>
-                                    <p>Obs: Born in Italy</p> <br>
-                                    <div>
-                                        <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Report</a><span class="badge" >1</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="material-icons">contacts
-                                    </i>Rua Das Flores Azuis, 77, Ed Turismo, Ap 202
-                                </div>
-                                <div class="collapsible-body">
-                                    <p>Name: John Doe</p> 
-                                    <p>Country: American</p>
-                                    <p>Ref: Close to the square</p>
-                                    <p>Obs: Born in Italy</p> <br>
-                                    <div>
-                                        <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Report</a><span class="badge" >1</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                    
-                    <div class="card-action">
-                        <a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Add a report</h4> <br>
-                <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Your report</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-            </div>
-        </div>
-    </div>
 
-</div>
     
 <div class="fixed-action-btn">
     <a class="btn-floating btn-large blue lighten-2">
@@ -120,40 +123,40 @@
     </ul>
 </div>
 
-    <!-- Moda de adicionar endereço -->
-    <div id="add-territory-modal" class="modal">
-            <div class="modal-content">
-                <h4>Add a new territory</h4> <br>
-                <div class="input-field col s12">
-                    <textarea id="textarea-address" class="materialize-textarea"></textarea>
-                    <label for="textarea-address">Address</label>
-                </div>
-                <div class="input-field col s12">
-                    <input id="textarea-reference" type="text" class="validate">
-                    <label for="textarea-reference">Reference</label>
-                </div>
-                <div class="input-field col s12">
-                    <textarea id="textarea-notes" class="materialize-textarea"></textarea>
-                    <label for="textarea-notes">Notes</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-            </div>
+<!-- Moda de adicionar endereço -->
+<div id="add-territory-modal" class="modal">
+    <div class="modal-content">
+        <h4>Add a new territory</h4> <br>
+        <div class="input-field col s12">
+            <textarea id="textarea-address" class="materialize-textarea"></textarea>
+            <label for="textarea-address">Address</label>
         </div>
-        
-        <!-- Moda de adicionar endereço -->
-        <div id="add-note-modal" class="modal">
-            <div class="modal-content">
-                <h4>Send a note to the system</h4> <br>
-                <div class="input-field col s12">
-                    <textarea id="textarea-notes" class="materialize-textarea"></textarea>
-                    <label for="textarea-notes">Your note</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-            </div>
+        <div class="input-field col s12">
+            <input id="textarea-reference" type="text" class="validate">
+            <label for="textarea-reference">Reference</label>
         </div>
+        <div class="input-field col s12">
+            <textarea id="textarea-notes" class="materialize-textarea"></textarea>
+            <label for="textarea-notes">Notes</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+    </div>
+</div>
+
+<!-- Moda de adicionar endereço -->
+<div id="add-note-modal" class="modal">
+    <div class="modal-content">
+        <h4>Send a note to the system</h4> <br>
+        <div class="input-field col s12">
+            <textarea id="textarea-notes" class="materialize-textarea"></textarea>
+            <label for="textarea-notes">Your note</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+    </div>
+</div>

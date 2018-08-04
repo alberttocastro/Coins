@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
+//= require jquery2
 //= require jquery_ujs
 // Sempre inclua
 // require turbolinks
+//= require materialize
 //= require materialize-sprockets
 //= require_tree .
 
@@ -27,6 +28,10 @@ $(document).ready(function(){
   $('.modal').modal();
   
   $('select').formSelect();
+
+  $('.collapsible').collapsible();
+
+  $('.tabs').tabs();
   
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',
@@ -53,13 +58,14 @@ $(document).ready(function(){
     toolbarEnabled: false // Toolbar transition enabled
   });
   
-  $(".button-collapse").sideNav();
   
   $("#dropdown-trigger").dropdown({
     hover: true,
     coverTrigger: false,
     beloworigin: true
   });
+
+  $('.sidenav').sidenav();
   
   // Sets the active item in the navbar extended
   var pathname = window.location.pathname;

@@ -1,9 +1,10 @@
 <%#Script dos gráficos%>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
+<div style="margin-top: 60px"></div>
 
 <!-- ABA 1 -->
-<div id="all" class="col s12" style="margin-top: 60px">
+<div id="all" class="col s12">
     <div class="container">
         <blockquote>
             <h5>Centro</h5>
@@ -51,13 +52,13 @@
 </div>
 
 <!-- ABA 2 -->
-<div id="dashboard" class="col s12" style="margin-top: 60px">
+<div id="dashboard" class="col s12">
     <div class="container">
 
-        <h3 class="blue-text text-lighten-3"><b>Charts</b></h3>
+        <h3  ><b>Charts</b></h3>
         <div class="divider"></div>
         <div class="col"></div>
-        <h4 class="blue-text ">By Country</h4>
+        <h4 class="grey-text text-darken2">By Country</h4>
         
         <canvas id="foreigners-by-country" width="400" height="400"></canvas>
         <script>
@@ -95,7 +96,7 @@
         <div class="divider"></div>
         <%# Título %>
         <div class="col"></div>
-        <h4 class="blue-text ">Regions and attendance</h4>
+        <h4 class="grey-text text-darken2">Regions and attendance</h4>
 
         <canvas id="foreigners-by-region" width="400" height="400"></canvas>
         <script>
