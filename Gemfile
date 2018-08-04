@@ -70,7 +70,7 @@ gem 'material_icons'
 
 gem 'prawn'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 
 # Inclua nas versões quando rails >= 5.1 
 gem 'jquery-rails'
