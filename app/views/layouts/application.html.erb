@@ -16,13 +16,13 @@
   
   
 </head>
-<!-- <body class="grey lighten-2"> -->
-
-    <body >
-  <%= @navbar.nil? ? nil : render(@navbar) %>
+<body>
+  <%= yield :header %>
   <%= render "partials/sidenav/sidenav" %>
-  <%# Body %>
-  <%= yield %>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  
+  <main>
+    <%= yield %>
+  </main>
+  
 </body>
 </html>

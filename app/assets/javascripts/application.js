@@ -31,10 +31,8 @@ $(document).ready(function(){
 
   $('.collapsible').collapsible();
 
-  $('.tabs').tabs({
-  });
+  $('.tabs').tabs();
   
-  $('.tabs-content.carousel.carousel-slider').css("height","auto");
   
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',
