@@ -17,12 +17,16 @@
   
 </head>
 <body>
-  <%= yield :header %>
-  <%= render "partials/sidenav/sidenav" %>
-  
+  <header>
+    <%= yield :header %>
+    <%= render "partials/sidenav/sidenav" %>
+  </header>
   <main>
     <%= yield %>
   </main>
+  <footer>
+    <%= yield :footer %>
+  </footer>
   
 </body>
 </html>
