@@ -64,13 +64,13 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 
-gem 'materialize-sass'
+gem 'materialize-sass', '~> 1.0.0.rc2'
 
 gem 'material_icons'
 
 gem 'prawn'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 
 # Inclua nas versões quando rails >= 5.1 
 gem 'jquery-rails'
