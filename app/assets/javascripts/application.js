@@ -19,12 +19,23 @@
 //= require materialize-sprockets
 //= require_tree .
 
+function notHidden(){
+  $("main").css({
+    "padding-top": $('nav').height() - 40
+  })
+}
+
 $(document).ready(function(){
   
   // Trocando a cor de fundo da aplicação caso não seja a tela de login
   if(window.location.pathname != "/login"){
     $("body").addClass("grey lighten-3")
   }
+
+  notHidden(); 
+  $( window ).resize(function() {
+    notHidden();
+  });
 
   console.log("Passei aqui");
   
