@@ -56,10 +56,17 @@
                                     <i class="material-icons">contacts</i>Rua Almeida Brandini, 57, Ed da Verdade, Ap 101
                                 </div>
                                 <div class="collapsible-body">
-                                    <p>Name: John Doe</p> 
-                                    <p>Country: American</p>
-                                    <p>Ref: Close to the square</p>
-                                    <p>Obs: Born in Italy</p> <br>
+                                    <div class="row valign-wrapper">
+                                        <div class="col s8">
+                                            <p>Name: John Doe</p> 
+                                            <p>Country: American</p>
+                                            <p>Ref: Close to the square</p>
+                                            <p>Obs: Born in Italy</p> <br>
+                                        </div>
+                                        <div class="col s4">
+                                            <%= link_to  "VER", view_path %>
+                                        </div>
+                                    </div>
                                     <div>
                                         <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Report</a><span class="badge" >1</span>
                                     </div>
