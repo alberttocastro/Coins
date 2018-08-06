@@ -26,7 +26,13 @@ function notHidden(){
 }
 
 $(document).ready(function(){
-  
+
+  $('.carousel').carousel({
+    fullWidth: true,
+    indicators: true,
+    noWrap: true
+  });
+
   // Trocando a cor de fundo da aplicação caso não seja a tela de login
   if(window.location.pathname != "/login"){
     $("body").addClass("grey lighten-3")

@@ -12,10 +12,18 @@
  */
 
 
-
+ 
   @import 'materialize';
- @import "material_icons";
+  @import "material_icons";
 
+  .carousel .indicators .indicator-item.active{
+    background-color: #303f9f ;
+  }
+
+  .carousel .indicators .indicator-item{
+    background-color: rgb(255, 255, 255);
+  }
+  
   .uppercase{
     text-transform: uppercase;
   }
