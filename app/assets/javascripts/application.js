@@ -26,31 +26,39 @@ function notHidden(){
 }
 
 $(document).ready(function(){
-
+  
+  $('input.autocomplete').autocomplete({
+    data: {
+      'How do I send a new address?': null,
+      "How do I report the visits of a address I've been to?": null,
+      "How do I see other people's previous visits on my addresses?": null
+    },
+  });
+  
   $('.carousel').carousel({
     fullWidth: true,
     indicators: true,
     noWrap: true
   });
-
+  
   // Trocando a cor de fundo da aplicação caso não seja a tela de login
   if(window.location.pathname != "/login"){
     $("body").addClass("grey lighten-3")
   }
-
+  
   notHidden(); 
   $( window ).resize(function() {
     notHidden();
   });
-
+  
   console.log("Passei aqui");
   
   $('.modal').modal();
   
   $('select').formSelect();
-
+  
   $('.collapsible').collapsible();
-
+  
   $('.tabs').tabs();
   
   
@@ -85,7 +93,7 @@ $(document).ready(function(){
     coverTrigger: false,
     beloworigin: true
   });
-
+  
   $('.sidenav').sidenav();
   
   // Sets the active item in the navbar extended

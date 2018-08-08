@@ -23,6 +23,19 @@
   .carousel .indicators .indicator-item{
     background-color: rgb(255, 255, 255);
   }
+
+  .input-field .prefix.active{
+    color: #1976d2
+  }
+
+  /* label underline focus color */
+  .input-field input[type=text].autocomplete:focus {
+    border-bottom: 1px solid #1976d2;
+    box-shadow: 0 1px 0 0 #1976d2;
+  }
+
+
+  // margin e typo
   
   .uppercase{
     text-transform: uppercase;
