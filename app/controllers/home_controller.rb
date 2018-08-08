@@ -20,6 +20,11 @@ class HomeController < ApplicationController
 
   end
 
+  def help
+    
+  end
+  
+
 end
 
 
