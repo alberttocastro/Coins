@@ -25,6 +25,10 @@ function notHidden(){
   })
 }
 
+function searchHelp(){
+  console.log("MUDOU O TEXTO")
+}
+
 $(document).ready(function(){
   
   $('input.autocomplete').autocomplete({
@@ -33,6 +37,12 @@ $(document).ready(function(){
       "How do I report the visits of a address I've been to?": null,
       "How do I see other people's previous visits on my addresses?": null
     },
+  });
+
+  $("input#autocomplete-input.autocomplete").on('input',function(){
+    searchHelp()
+  }).change(function() {
+    searchHelp();
   });
   
   $('.carousel').carousel({
