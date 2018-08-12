@@ -20,9 +20,11 @@
 //= require_tree .
 
 function notHidden(){
-  $("main").css({
-    "padding-top": $('nav').height() - 40
-  })
+  if($("nav").parent().prop("tagName") == "DIV"){
+    $("main").css({
+      "padding-top": $('nav').height() - 40
+    })
+  }
 }
 
 function searchHelp(){
