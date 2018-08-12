@@ -26,7 +26,8 @@ function notHidden(){
 }
 
 function searchHelp(){
-  console.log("MUDOU O TEXTO")
+  $("ul.collapsible.popout").children("li").show();
+  $("ul.collapsible.popout").children("li:not(:contains("+$("#autocomplete-input").val()+"))").hide();
 }
 
 $(document).ready(function(){
