@@ -72,6 +72,8 @@ gem 'prawn'
 
 # gem 'sqlite3'
 
+gem "rails_admin_import"
+
 gem 'gmaps4rails'
 
 # Inclua nas versões quando rails >= 5.1 
