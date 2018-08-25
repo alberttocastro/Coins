@@ -24,7 +24,7 @@ class HomeController < ApplicationController
     
   end
 
-  def hotels
+  def management
     
   end
   

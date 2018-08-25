@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'login', to:'home#login', as: :login
   get 'view', to: 'home#view', as: :view
   get 'help', to: 'home#help', as: :help
+  get 'management', to: 'home#management', as: :management
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
