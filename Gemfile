@@ -72,6 +72,8 @@ gem 'prawn'
 
 # gem 'sqlite3'
 
+gem 'gmaps4rails'
+
 # Inclua nas versões quando rails >= 5.1 
 gem 'jquery-rails'
 
