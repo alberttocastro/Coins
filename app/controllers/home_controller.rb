@@ -23,8 +23,11 @@ class HomeController < ApplicationController
   def help
     
   end
-  
 
+  def hotels
+    
+  end
+  
 end
 
 
