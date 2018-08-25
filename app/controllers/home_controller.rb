@@ -27,6 +27,10 @@ class HomeController < ApplicationController
   def management
     
   end
+
+  def edit
+    
+  end
   
 end
 
