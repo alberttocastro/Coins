@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827233923) do
+ActiveRecord::Schema.define(version: 20180827234504) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "neighborhood"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180827233923) do
     t.integer "group_id"
     t.integer "second_language"
     t.integer "card_number"
+    t.integer "frequence"
   end
 
   create_table "addresses_idioms", force: :cascade do |t|
