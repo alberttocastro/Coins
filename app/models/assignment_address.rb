@@ -1,0 +1,2 @@
+class AssignmentAddress < ApplicationRecord
+end
