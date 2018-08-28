@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180827234731) do
+ActiveRecord::Schema.define(version: 20180828002008) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "neighborhood"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20180827234731) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "isvalid"
-    t.boolean "isvisitable"
-    t.boolean "isvisited"
+    t.boolean "is_valid?"
+    t.boolean "is_visitable?"
+    t.boolean "is_visited?"
     t.integer "adrstype_id"
     t.text "comments"
     t.text "references"
