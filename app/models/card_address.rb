@@ -1,0 +1,2 @@
+class CardAddress < ApplicationRecord
+end
