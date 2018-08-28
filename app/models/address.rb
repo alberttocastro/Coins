@@ -3,6 +3,7 @@ class Address < ApplicationRecord
     belongs_to :adrstype
     belongs_to :macroregion
     belongs_to :group
+    belongs_to :card
     has_many :telephones
     has_many :visits
 end
