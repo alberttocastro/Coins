@@ -1,2 +1,0 @@
-class CardAddress < ApplicationRecord
-end
