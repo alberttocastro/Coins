@@ -6,4 +6,10 @@ class Address < ApplicationRecord
     belongs_to :card
     has_many :telephones
     has_many :visits
+
+    def nationality
+        if !self.nationality_id.nil?
+            Nationality.find(self.nationality_id)
+        end
+    end
 end
