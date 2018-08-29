@@ -21,7 +21,9 @@ class Address < ApplicationRecord
 
     # Retorna o objeto do publicador que cuida do endereço, caso exista
     def publisher
-      Publisher.find(self.publisher_id)
+      if !self.publisher_id.nil?
+        Publisher.find(self.publisher_id)
+      end
     end
 
     # Retorna todos os endereços que não devem ser visitados de acordo com o id da macroregião
