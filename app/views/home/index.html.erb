@@ -35,7 +35,7 @@
 <div id="assigned-territories" class="col s12">
     <div class="container">
         
-        <% Assignment.where(user_id: current_user.id).each do |assignment| %>
+        <% current_user.assignments_to_do.each do |assignment| %>
         
         <%# Cartão %>
         <div class="row">
@@ -131,26 +131,18 @@
                 <div class="card white">
                     <div class="card-content">
                         <span class="card-title red-text"><b>DO NOT CALL</b></span>
-                        <h5>Barra</h5>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
+                        <% current_user.do_not_call_info.each do |info| %>
+                        <h5><%= info[0].macroreg %></h5>
+                        <% info[1].each do |address| %>
+                        <p><%= link_to "#{address.street}", "#" %></p>
                         <div class="divider"></div>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
-                        <div class="divider"></div>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
-                        <div class="divider"></div>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
-                        <h5>Graça</h5>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
-                        <div class="divider"></div>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
-                        <div class="divider"></div>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
-                        <div class="divider"></div>
-                        <p>Rua princesa leopoldina, 252 - Marco (Italia)</p>
+                        <% end %>
+                        <% end %>
                     </div>
                 </div>
             </div>
         </div>
+    
     </div>
 </div>
 
@@ -180,21 +172,6 @@
         <div class="input-field col s12">
             <textarea id="textarea-notes" class="materialize-textarea"></textarea>
             <label for="textarea-notes">Notes</label>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-    </div>
-</div>
-
-<!-- Moda de adicionar endereço -->
-<div id="add-note-modal" class="modal">
-    <div class="modal-content">
-        <h4>Send a note to the system</h4> <br>
-        <div class="input-field col s12">
-            <textarea id="textarea-notes" class="materialize-textarea"></textarea>
-            <label for="textarea-notes">Your note</label>
         </div>
     </div>
     <div class="modal-footer">
