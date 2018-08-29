@@ -23,4 +23,9 @@ class Address < ApplicationRecord
 
       @answer
     end
+
+    # Retorna se o endereço foi feito naquela designação
+    def done?(assignment_id)
+      !AssignmentAddress.where(address_id:self.id, assignment_id: assignment_id).empty?
+    end
 end
