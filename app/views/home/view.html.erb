@@ -6,22 +6,25 @@
         <%- end  %>                
     </div>
     <div class="container">
-        <h4 class="mt-0">Avenida sete de setembro, 1270, Ed mansão da avenida, Ap 20</h4>
+        <h4 class="mt-0"> <%= @address.street %> </h4>
     </div>
 </nav>
 <% end %>
 
 <div class="container">
     
+    <%# Caso a pessoa tenha um instrutor, mostra %>
+    <% if @address.is_visited? %>
     <div class="row">
         <div class="col s10 offset-s2">
             <div class="card blue darken-2 z-depth-2 center">
                 <span class="white-text">
-                    <p style="font-size: 20px; padding-top: 3%;padding-bottom: 3%;"><span style="font-weight: bolder">Instructor</span> John Doe</p>          
+                    <p style="font-size: 20px; padding-top: 3%;padding-bottom: 3%;"><span style="font-weight: bolder">Instructor</span> <%= @address.publisher.name %></p>          
                 </span>
             </div>
         </div>
     </div>
+    <% end %>
     
     <div class="col">
         
@@ -37,7 +40,7 @@
         <div class="row">
             <div class="col s10 offset-s2">
                 <div class="left-align description-font">
-                    John Doe
+                    <%= @address.name %>
                     <div class="divider"></div>
                 </div> 
             </div>
@@ -55,7 +58,7 @@
         <div class="row">
             <div class="col s10  offset-s2">
                 <div class="left-align description-font">
-                    Nigeria 
+                     <%= @address.nationality.country %>
                     <div class="divider"></div>
                 </div> 
             </div>
@@ -74,7 +77,7 @@
             <div>
                 <div class="col s10 offset-s2">
                     <div class="left-align description-font">
-                        <p class="flow-text mt-0 mb-0"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        <p class="flow-text mt-0 mb-0"> <%= @addres.references %> </p>
                         <div class="divider"></div>
                     </div> 
                 </div>
@@ -95,30 +98,25 @@
         <div class="row">
             <div class="col s10 offset-s2">
                 <div class="left-align description-font">
-                    <p class="flow-text mt-0 mb-0"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="flow-text mt-0 mb-0"> <%= @address.comments %></p>
                 </div> 
             </div>
         </div>
         
     </div>
-
-    <!-- Botão de editar -->
-    <div class="row">
-        <div class="col s12 right-align">
-            <a href="<%= edit_path %>" class="waves-effect waves-light blue darken-2 z-depth-2 btn">Edit</a>
-        </div>
-    </div>
     
+    <% if !@address.visits.empty? %>
     <div class="carousel carousel-slider">
 
         <div class="row hide-on-small-only">
             <div class="col offset-s1">
                 <h3 style="font-weight: 500" class="indigo-text text-darken-4">
-                    Visitas
+                    Visits
                 </h3>
             </div>
         </div>
         
+        <% @address.visits.each do |visit|%>
         <a class="carousel-item valign-wrapper">
             
             <div class="row mb-0">
@@ -134,16 +132,16 @@
                                     </div>
                                     <div class="col">
                                         <div class="row mb-0">
-                                            Jorge Figueiras 1
+                                            <%= visit.publisher.name %>
                                         </div>
                                         <div class="row">
-                                            <h6 class="mt-0" style="font-weight: 300">Aug, 27 2019</h6>
+                                            <h6 class="mt-0" style="font-weight: 300"><%= visit.date %></h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <p style="font-weight: 300">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.
+                            <p style="font-weight: 300">
+                                <%= visit.comment %>
                             </p>
                         </div>
                     </div>
@@ -151,139 +149,10 @@
             </div>
             
         </a>
-        
-        <a class="carousel-item valign-wrapper">
-            
-            <div class="row mb-0">
-                <div class="col s12 m10 offset-m1">
-                    <div class="card white">
-                        <div class="card-content black-text">
-                            <div class="card-title left-align mb-0" style="font-weight: 400">
-                                <div class="row mb-0">
-                                    <div class="col">
-                                        <div class="valign-wrapper">
-                                            <i class="material-icons medium valign-wrapper" style="padding-top: 18%">account_circle</i>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row mb-0">
-                                            Jorge Figueiras 2
-                                        </div>
-                                        <div class="row">
-                                            <h6 class="mt-0" style="font-weight: 300">Aug, 27 2019</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p style="font-weight: 300">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </a>
-        
-        <a class="carousel-item valign-wrapper">
-            
-            <div class="row mb-0">
-                <div class="col s12 m10 offset-m1">
-                    <div class="card white">
-                        <div class="card-content black-text">
-                            <div class="card-title left-align mb-0" style="font-weight: 400">
-                                <div class="row mb-0">
-                                    <div class="col">
-                                        <div class="valign-wrapper">
-                                            <i class="material-icons medium valign-wrapper" style="padding-top: 18%">account_circle</i>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row mb-0">
-                                            Jorge Figueiras 3
-                                        </div>
-                                        <div class="row">
-                                            <h6 class="mt-0" style="font-weight: 300">Aug, 27 2019</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p style="font-weight: 300">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </a>
-        
-        <a class="carousel-item valign-wrapper" >
-            
-            <div class="row mb-0">
-                <div class="col s12 m10 offset-m1">
-                    <div class="card white">
-                        <div class="card-content black-text">
-                            <div class="card-title left-align mb-0" style="font-weight: 400">
-                                <div class="row mb-0">
-                                    <div class="col">
-                                        <div class="valign-wrapper">
-                                            <i class="material-icons medium valign-wrapper" style="padding-top: 18%">account_circle</i>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row mb-0">
-                                            Jorge Figueiras 4
-                                        </div>
-                                        <div class="row">
-                                            <h6 class="mt-0" style="font-weight: 300">Aug, 27 2019</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p style="font-weight: 300">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </a>
-        
-        <a class="carousel-item valign-wrapper" >
-            
-            <div class="row mb-0">
-                <div class="col s12 m10 offset-m1">
-                    <div class="card white">
-                        <div class="card-content black-text">
-                            <div class="card-title left-align mb-0" style="font-weight: 400">
-                                <div class="row mb-0">
-                                    <div class="col">
-                                        <div class="valign-wrapper">
-                                            <i class="material-icons medium valign-wrapper" style="padding-top: 18%">account_circle</i>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="row mb-0">
-                                            Jorge Figueiras 5
-                                        </div>
-                                        <div class="row">
-                                            <h6 class="mt-0" style="font-weight: 300">Aug, 27 2019</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p style="font-weight: 300">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
+        <% end %> <%# Fim das iterações sob as visitas dos endereços %>
         
     </div>
+    <% end %>
     
     
 </div>
