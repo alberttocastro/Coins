@@ -63,7 +63,7 @@
                         <ul class="collapsible z-depth-0">
                             <% @addresses.each do |address| %>
                             <li>
-                                <div class="collapsible-header">
+                                <div class="collapsible-header <%= address.done?(assignment.id) ? "blue lighten-4" : nil %>">
                                     <i class="material-icons">contacts</i><%= address.street %>
                                 </div>
                                 <div class="collapsible-body">
