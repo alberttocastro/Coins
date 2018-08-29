@@ -45,41 +45,48 @@
                     <div class="card-content indigo-text text-darken-4">
                         
                         <%# Header %>
-                        <% Card.find(assingment.card_id) %>
+                        <% @card = Card.find(assingment.card_id) %>
                         <span class="card-title">
                             <div class="row">
                                 <div class="col s2" style="padding-left: 0%"><i class="material-icons medium">location_on</i></div>
                                 <div class="col s10" style="vertical-align:middle;">
-                                    <h4 style="margin-top: 0px"><b>Barra 1</b></h4>
+                                    <h4 style="margin-top: 0px">
+                                        <b><%= @card.name %></b>
+                                    </h4>
                                 </div>
                             </div>
                         </span>
-
+                        
                         <%# Endereços %>
+                        <% @addresses = @card.addresses%>
+                        <% if !@addresses.empty? %>
                         <ul class="collapsible z-depth-0">
+                            <% @addresses.each do |address| %>
                             <li>
                                 <div class="collapsible-header">
-                                    <i class="material-icons">contacts</i>Rua Almeida Brandini, 57, Ed da Verdade, Ap 101
+                                    <i class="material-icons">contacts</i><%= address.street %>
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row valign-wrapper">
                                         <div class="col s8">
-                                            <p>Name: John Doe</p> 
-                                            <p>Country: American</p>
-                                            <p>Ref: Close to the square</p>
-                                            <p>Obs: Born in Italy</p> <br>
+                                            <p>Name: <%= address.name %></p> 
+                                            <p>Country: <%= address.nationality %></p>
+                                            <p>Ref: <%= address.references %></p>
+                                            <p>Obs: <%= address.comments %></p> <br>
                                         </div>
                                         <div class="col s4">
                                             <%= link_to  "VER", view_path %>
                                         </div>
                                     </div>
                                     <div>
-                                        <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Report</a><span class="badge" >1</span>
+                                        <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#report-visit">Report</a>
                                     </div>
                                 </div>
                             </li>
-
+                            <% end %>
+                            
                         </ul>
+                        <% end %>
                         
                     </div>
                     
@@ -87,11 +94,26 @@
                     <div class="card-action">
                         <a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
                     </div>
-                
+                    
                 </div>
-            
+                
             </div>
             
+        </div>
+        
+        <%# Modal de relatar visita %>
+        <div id="report-visit" class="modal" style="min-height: 33%">
+            <div class="modal-content">
+                <h4>Add a report</h4> <br>
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Your report</label>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+                </div>
+            </div>
         </div>
         
         <% end %>
@@ -171,7 +193,6 @@
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
                 </div>
             </div>
-            
         </div>
         
     </div>
