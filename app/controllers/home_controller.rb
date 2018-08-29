@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   end
 
   def view
-
+    @address = Address.find(params[:address_id].to_i)
   end
 
   def help
