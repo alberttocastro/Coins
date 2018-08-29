@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180828233538) do
+ActiveRecord::Schema.define(version: 20180829173705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20180828233538) do
     t.datetime "updated_at", null: false
     t.boolean "is_valid?"
     t.boolean "is_visitable?"
-    t.boolean "is_visited?"
     t.integer "adrstype_id"
     t.text "comments"
     t.text "references"
