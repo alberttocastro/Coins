@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180828233538) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string "neighborhood"
     t.text "street"
@@ -35,8 +38,8 @@ ActiveRecord::Schema.define(version: 20180828233538) do
   end
 
   create_table "addresses_idioms", force: :cascade do |t|
-    t.integer "idiom_id"
-    t.integer "address_id"
+    t.bigint "idiom_id"
+    t.bigint "address_id"
     t.index ["address_id"], name: "index_addresses_idioms_on_address_id"
     t.index ["idiom_id"], name: "index_addresses_idioms_on_idiom_id"
   end
