@@ -68,14 +68,14 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row valign-wrapper">
-                                        <div class="col s8">
+                                        <div class="col s9">
                                             <p>Name: <%= address.name %></p> 
                                             <p>Country: <%= address.nationality %></p>
                                             <p>Ref: <%= address.references %></p>
                                             <p>Obs: <%= address.comments %></p> <br>
                                         </div>
-                                        <div class="col s4">
-                                            <%= link_to  "VER", view_path %>
+                                        <div class="col s3">
+                                            <%= link_to  "View", view_path(address_id: address.id) %>
                                         </div>
                                     </div>
                                     <div>
@@ -90,6 +90,7 @@
                         
                     </div>
                     
+                    <%# TODO: Ação dinâmica de terminar a designação %>
                     <%# Ações do cartão %>
                     <div class="card-action">
                         <a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
@@ -102,6 +103,7 @@
         </div>        
         <% end %>
 
+        <%# TODO: Completar modal de relatar visita (Data da visita; Enviar para o banco)  %>
         <%# Modal de relatar visita %>
         <div id="report-visit" class="modal" style="min-height: 33%">
             <div class="modal-content">
@@ -146,7 +148,7 @@
     </div>
 </div>
 
-
+<%# FIXME: remover dupla ação %>
 <div class="fixed-action-btn">
     <a class="btn-floating btn-large blue lighten-2">
         <i class="material-icons Large">add</i>
@@ -157,6 +159,7 @@
     </ul>
 </div>
 
+<%# TODO: Colocar função dinâmica no modal  %>
 <!-- Moda de adicionar endereço -->
 <div id="add-territory-modal" class="modal">
     <div class="modal-content">
