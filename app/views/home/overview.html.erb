@@ -34,24 +34,21 @@
 <!-- ABA 1 -->
 <div id="all" class="col s12">
     <div class="container">
+        <% Macroregion.all.each do |macroregion| %>
         <blockquote>
-            <h5>Centro</h5>
+            <h5><%= macroregion.macroreg %></h5>
         </blockquote>
         
         <ul class="collapsible popout">
+            <% macroregion.cards.each do |card| %>
             <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Pelourinho 1</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header"><i class="material-icons">place</i><%= card.name %></div>
+                <div class="collapsible-body"><span><%= card. %></span></div>
             </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Pelourinho 2</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Pelourinho 3</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
+            <% end %>
         </ul>
+        <% end %>
+
         <blockquote>
             <h5>Barra</h5>
         </blockquote>
