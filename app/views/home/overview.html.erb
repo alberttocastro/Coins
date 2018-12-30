@@ -43,36 +43,15 @@
             <% macroregion.cards.each do |card| %>
             <li>
                 <div class="collapsible-header"><i class="material-icons">place</i><%= card.name %></div>
-                <div class="collapsible-body"><span><%= card. %></span></div>
+                <div class="collapsible-body">
+                    <% card.addresses.each do |address| %>
+                        <span><%= address.street %></span><br>
+                    <% end %>
+                </div>
             </li>
             <% end %>
         </ul>
         <% end %>
-
-        <blockquote>
-            <h5>Barra</h5>
-        </blockquote>
-        <ul class="collapsible popout">
-            <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Barra 1</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Barra 2</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Barra 3</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-        <blockquote><h5>Litoral Sul</h5></blockquote>
-        <blockquote><h5>Litoral Centro</h5></blockquote>
-        <blockquote><h5>Litoral Norte</h5></blockquote>
-        <blockquote><h5>Paralela Centro</h5></blockquote>
-        <blockquote><h5>Paralela Norte</h5></blockquote>
-        <blockquote><h5>Cidade Baixa</h5></blockquote>
-        <blockquote><h5>Suburbio</h5></blockquote>
     </div>
 </div>
 
