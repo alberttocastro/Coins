@@ -7,7 +7,7 @@ class Macroregion < ApplicationRecord
         @cards = []
         
         self.cards.each do |card|
-            card.is_at_work? ? @cards << card : nil
+            !card.is_at_work? ? @cards << card : nil
         end
 
         @cards
@@ -17,7 +17,7 @@ class Macroregion < ApplicationRecord
         @cards = []
         
         self.cards.each do |card|
-            !card.is_at_work? ? @cards << card : nil
+            card.is_at_work? ? @cards << card : nil
         end
 
         @cards
