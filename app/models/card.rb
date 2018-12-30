@@ -42,7 +42,7 @@ class Card < ApplicationRecord
         @assigneds
     end
 
-    def is_at_word?
+    def is_at_work?
         Assignment.where(card_id: card.id).length > 0
     end
     
