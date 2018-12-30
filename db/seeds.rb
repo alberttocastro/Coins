@@ -6,14 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Macroregion.create(
+Macroregion.create([
     {macroreg: Faker::Address.community},
     {macroreg: Faker::Address.community},
     {macroreg: Faker::Address.community},
     {macroreg: Faker::Address.community},
     {macroreg: Faker::Address.community}
+])
+
+Card.create([
+    {number: Faker::Number.between(0, 100), name: Faker::Address.street_name, macroregion: Macroregion.first},
+    {number: Faker::Number.between(0, 100), name: Faker::Address.street_name, macroregion: Macroregion.second},
+    {number: Faker::Number.between(0, 100), name: Faker::Address.street_name, macroregion: Macroregion.third},
+    {number: Faker::Number.between(0, 100), name: Faker::Address.street_name, macroregion: Macroregion.fourth},
+    {number: Faker::Number.between(0, 100), name: Faker::Address.street_name, macroregion: Macroregion.fifth},
+])
+
+Adrstype.create([
+    {typename:"type"}
+])
+
+Nationality.create([
+    {country: Faker::Address.country},
+    {country: Faker::Address.country}
+])
+
+Idiom.create(
+    {language: "language"}
 )
 
-Card.create(
-    {number: Faker::Number.between(0, 100)}
-)
+Address.create([
+    {neighborhood: Faker::Address.community,street: Faker::Address.street_address, nationality_id: Nationality.first.id, idiom_id: Idiom.first, name: Faker::TvShows::Friends.character, is_valid?: true, is_visitable?: true, adrstype: Adrstype.first }
+])
