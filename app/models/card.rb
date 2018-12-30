@@ -41,6 +41,11 @@ class Card < ApplicationRecord
 
         @assigneds
     end
+
+    def is_at_word?
+        Assignment.where(card_id: card.id).length > 0
+    end
+    
     
 
 end
