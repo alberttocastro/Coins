@@ -130,7 +130,7 @@
             <select>
                 <option value="" disabled selected>Choose name</option>
                 <% User.all.each do |user| %>
-                    <option value="<%= user.id %>"><%= User.email %></option>
+                    <option value="<%= user.id %>"><%= user.email %></option>
                 <% end %>
             </select>
             <label>Publisher 1</label>
