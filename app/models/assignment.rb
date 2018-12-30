@@ -1,6 +1,7 @@
 class Assignment < ApplicationRecord
 
   belongs_to :card
+  belongs_to :user
 
     # A verificação de concluido se dá de acordo com a data
     def concluded?
