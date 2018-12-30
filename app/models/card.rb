@@ -43,7 +43,7 @@ class Card < ApplicationRecord
     end
 
     def is_at_work?
-        Assignment.where(card_id: card.id).length > 0
+        Assignment.where(card_id: self.id).length > 0
     end
     
     
