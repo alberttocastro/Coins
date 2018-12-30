@@ -35,8 +35,8 @@
 <div id="assigned-territories" class="col s12">
     <div class="container">
         
-        <% current_user.assignments_to_do.each do |assignment| %>
-        
+        <%# current_user.assignments_to_do.each do |assignment| %>
+        <% User.first.assignments_to_do.each do |assignment| %>
         <%# Cartão %>
         <div class="row">
             <div class="col s12 m10 l8 xl8 offset-xl2 offset-l2 offset-m1">
@@ -133,7 +133,8 @@
                 <div class="card white">
                     <div class="card-content">
                         <span class="card-title red-text"><b>DO NOT CALL</b></span>
-                        <% current_user.do_not_call_info.each do |info| %>
+                        <%# current_user.do_not_call_info.each do |info| %>
+                        <% User.first.do_not_call_info.each do |info| %>
                         <h5><%= info[0].macroreg %></h5>
                         <% info[1].each do |address| %>
                         <p><%= link_to "#{address.street}", "#" %></p>
