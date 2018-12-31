@@ -34,6 +34,6 @@ class User < ApplicationRecord
       assignment.concluded? ? nil : @answer << assignment
     end
 
-    return @answer
+    @answer === [] ? @answer : [@answer]
   end
 end
