@@ -37,6 +37,7 @@
         
         <%# current_user.assignments_to_do.each do |assignment| %>
         <% User.first.assignments_to_do.each do |assignment| %>
+        <% puts assignment%>
         <%# Cartão %>
         <div class="row">
             <div class="col s12 m10 l8 xl8 offset-xl2 offset-l2 offset-m1">
@@ -45,7 +46,7 @@
                     <div class="card-content indigo-text text-darken-4">
                         
                         <%# Header %>
-                        <% @card = Card.find(assingment.card_id) %>
+                        <% @card = Card.find(assignment.card_id) %>
                         <span class="card-title">
                             <div class="row">
                                 <div class="col s2" style="padding-left: 0%"><i class="material-icons medium">location_on</i></div>
@@ -135,10 +136,12 @@
                         <span class="card-title red-text"><b>DO NOT CALL</b></span>
                         <%# current_user.do_not_call_info.each do |info| %>
                         <% User.first.do_not_call_info.each do |info| %>
-                        <h5><%= info[0].macroreg %></h5>
+                        <h5><%= info[0].nil? ? nil : info[0].macroreg %></h5>
+                        <% if !info[1].nil? %>
                         <% info[1].each do |address| %>
                         <p><%= link_to "#{address.street}", "#" %></p>
                         <div class="divider"></div>
+                        <% end %>
                         <% end %>
                         <% end %>
                     </div>
