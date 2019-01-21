@@ -31,7 +31,7 @@
 
 <% end %>
 
-<!-- ABA de territórios designados -->
+<!-- ABA de territórios designados para mim -->
 <div id="assigned-territories" class="col s12">
     <div class="container">
         
@@ -94,7 +94,7 @@
                     <%# TODO: Ação dinâmica de terminar a designação %>
                     <%# Ações do cartão %>
                     <div class="card-action">
-                        <a href="#" class="black-text waves-effect waves-teal btn-flat"><b>Done</b></a>
+                        <%= link_to declare_concluded_path(id: assignment.id), class:'black-text waves-effect waves-teal btn-flat', method: :post do %><b>Done</b> <% end %>
                     </div>
                     
                 </div>
