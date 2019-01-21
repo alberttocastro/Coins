@@ -33,10 +33,10 @@ class HomeController < ApplicationController
     
   end
 
-  def declare_finished
+  def declare_concluded
     
     @param = params.permit(:id)
-    Assignment.find(@param[:id]).declare_finished
+    Assignment.find(@param[:id]).declare_concluded
 
   end
   
