@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'management', to: 'home#management', as: :management
   get 'edit', to: 'home#edit', as: :edit
   
+  post 'assignment/:id/declare_finished', to:"home#declare_concluded", as: :declare_concluded
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
