@@ -32,6 +32,14 @@ class HomeController < ApplicationController
   def edit
     
   end
+
+  def declare_finished
+    
+    @param = params.permit(:id)
+    Assignment.find(@param[:id]).declare_finished
+
+  end
+  
   
 end
 
