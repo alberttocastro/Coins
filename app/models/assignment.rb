@@ -24,4 +24,11 @@ class Assignment < ApplicationRecord
         AssignmentAddress.where(assignment_id: self.id).destroy
       end
     end
+
+    def declare_concluded
+      
+      self.update(date: Date.today)
+
+    end
+    
 end
