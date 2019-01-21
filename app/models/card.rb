@@ -30,7 +30,7 @@ class Card < ApplicationRecord
     def people_assigned_to_the_card
         @assigneds = {}
 
-        @assignments = Assignment.where(card_id: self.id).oder_by(:date)
+        @assignments = Assignment.where(card_id: self.id).order_by(:date)
         @assignments.pluck(:date).uniq.each do |date|
             @date = date.strftime("%d/%m/%Y")
             @assigneds[@date] = []
