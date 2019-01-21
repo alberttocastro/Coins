@@ -25,7 +25,7 @@ class Assignment < ApplicationRecord
       end
     end
 
-    def declare_finished
+    def declare_concluded
       
       self.update(date: Date.today)
 
