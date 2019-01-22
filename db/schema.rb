@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20190122235154) do
     t.integer "group_id"
   end
 
-  create_table "sugested_addresses", force: :cascade do |t|
+  create_table "suggested_addresses", force: :cascade do |t|
     t.string "neighborhood"
     t.text "street"
     t.string "name"

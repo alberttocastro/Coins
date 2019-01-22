@@ -1,2 +1,0 @@
-class SugestedAddress < ApplicationRecord
-end
