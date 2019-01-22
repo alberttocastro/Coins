@@ -1,0 +1,2 @@
+class SugestedAddress < ApplicationRecord
+end
