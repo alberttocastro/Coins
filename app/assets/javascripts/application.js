@@ -33,13 +33,15 @@ function searchHelp(){
 }
 
 $(document).ready(function(){
-  
+
+  // Formulário para pesquisar as perguntas do HELPDESK
+  var questions = {};
+  var questions_objects = $('span#question')
+  for(var i = 0; i < questions_objects.length; i++ ){
+    questions[questions_objects[i].innerText] = null;
+  }
   $('input.autocomplete').autocomplete({
-    data: {
-      'How do I send a new address?': null,
-      "How do I report the visits of a address I've been to?": null,
-      "How do I see other people's previous visits on my addresses?": null
-    },
+    data: questions,
   });
 
   $("input#autocomplete-input.autocomplete").on('input',function(){
