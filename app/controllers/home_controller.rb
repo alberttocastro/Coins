@@ -39,6 +39,14 @@ class HomeController < ApplicationController
     Assignment.find(@param[:id]).declare_concluded
 
   end
+
+  # Ação para incluir uma sugestão de endereço como endereço no banco de dados
+  def accept_sugestion
+    
+    
+
+  end
+  
   
   
 end
