@@ -101,22 +101,26 @@
 
 
         <blockquote>
-            <h4>Endereços sem mapa</h4>
+            <h4>Address without a map - Comming soon</h4>
         </blockquote>
 
         <!-- Cartão de novo território -->
+        <% Address.where(card: nil).each do |address| %>
         <div class="row">
             <div class="col s12 m6">
                 <div class="card grey lighten-5 z-depth-2">
                     <div class="card-content indigo-text text-darken-4">
                         <p>
-                            <b>Address:</b> Rua das bromélias, 57
+                            <b>Street:</b> <span>Rua das bromélias, 57</span>
                         </p>
                         <p>
-                            <b>Reference:</b> Close to the house of somebody
+                            <b>Neighborhood:</b> <span></span>
                         </p>
                         <p>
-                            <b>Notes:</b> Take this into consideration
+                            <b>Reference:</b> <span>Close to the house of somebody</span>
+                        </p>
+                        <p>
+                            <b>Notes:</b> <span>Take this into consideration</span>
                         </p>
                     </div>
                     <div class="card-action">
@@ -125,6 +129,7 @@
                 </div>
             </div>
         </div>
+        <% end %>
 
         <!-- Modal - Escolher mapa -->
         <div id="choose-map" class="modal">
