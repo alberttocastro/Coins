@@ -1,8 +1,0 @@
-<div class="container">
-<ul class="collection with-header">
-<li class="collection-header"><h4>Unassigned</h4></li>
-    <% @unassigned.each do |address| %>
-        <li class="collection-item">(<%= address.neighborhood%>) <%= address.street%> - <%= Macroregion.find(address.macroregion_id).macroreg%> <%= link_to address_path(address), class: "secondary-content" do %> <i class="material-icons">send</i> <%end%></li>
-  <% end %>
-</ul>
-</div>
