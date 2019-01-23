@@ -41,9 +41,9 @@ class HomeController < ApplicationController
   end
 
   # Ação para incluir uma sugestão de endereço como endereço no banco de dados
-  def accept_sugestion
+  def accept_suggestion
     
-    
+
 
   end
   
