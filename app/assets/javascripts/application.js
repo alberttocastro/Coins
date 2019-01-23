@@ -115,6 +115,19 @@ $(document).ready(function(){
   if (pathparts[1] != null) {
     $("#".concat(pathparts[1])).addClass("active");
   }
+
+  // Na lista de endereços sugeridos,
+  // Coloca os dados que aparecem na lista dentro do formulário do
+  // modal de adicionar novo endereço
+  $(".modal-trigger.suggested-address").click(function(event){
+    var id = event.target.id;
+
+    $("#textarea-street").val($("#" + id + ".street")[0].innerText);
+    $("#textarea-neighborhood").val($("#" + id + ".neighborhood")[0].innerText);
+    $("#textarea-name").val($("#" + id + ".name")[0].innerText);
+    $("#textarea-comments").val($("#" + id + ".comments")[0].innerText);
+  })
+
 });
 
 //$(document).ready(runfunction);
