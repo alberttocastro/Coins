@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords', unlocks: 'users/unlocks'}
 
   get 'home', to: "home#home", as: :home
+  post 'home/add_new_suggested', to: 'home#create_suggested_address', as: :create_suggested_address
+
   get 'login', to:'home#login', as: :login
   get 'view', to: 'home#view', as: :view
   get 'edit', to: 'home#edit', as: :edit

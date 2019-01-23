@@ -161,25 +161,31 @@
     </ul>
 </div>
 
-<!-- Moda de adicionar endereço -->
+<%# Modal de adicionar endereço %>
 <div id="add-territory-modal" class="modal">
+    <%= form_tag create_suggested_address_path do %>
     <div class="modal-content">
         <h4>Add a new territory</h4> <br>
         <div class="input-field col s12">
-            <textarea id="textarea-address" class="materialize-textarea"></textarea>
+            <%= text_field_tag :street, "" %>
             <label for="textarea-address">Address</label>
         </div>
         <div class="input-field col s12">
-            <input id="textarea-reference" type="text" class="validate">
+            <%= text_field_tag :neighborhood, "" %>
             <label for="textarea-reference">Reference</label>
         </div>
         <div class="input-field col s12">
-            <textarea id="textarea-notes" class="materialize-textarea"></textarea>
+            <%= text_field_tag :name, "" %>
+            <label for="textarea-notes">Name <i>(Optional)</i></label>
+        </div>
+        <div class="input-field col s12">
+            <%= text_field_tag :comments, "" %>
             <label for="textarea-notes">Notes</label>
         </div>
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+        <%= submit_tag 'Send', class:'waves-effect waves-green btn-flat' %>
     </div>
+    <% end %>
 </div>
