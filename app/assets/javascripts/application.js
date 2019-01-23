@@ -122,10 +122,10 @@ $(document).ready(function(){
   $(".modal-trigger.suggested-address").click(function(event){
     var id = event.target.id;
 
-    $("#textarea-street").val($("#" + id + ".street")[0].innerText);
-    $("#textarea-neighborhood").val($("#" + id + ".neighborhood")[0].innerText);
-    $("#textarea-name").val($("#" + id + ".name")[0].innerText);
-    $("#textarea-comments").val($("#" + id + ".comments")[0].innerText);
+    $(".textarea-street").val($("#" + id + ".street")[0].innerText);
+    $(".textarea-neighborhood").val($("#" + id + ".neighborhood")[0].innerText);
+    $(".textarea-name").val($("#" + id + ".name")[0].innerText);
+    $(".textarea-comments").val($("#" + id + ".comments")[0].innerText);
   })
 
 });
