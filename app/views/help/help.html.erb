@@ -40,18 +40,12 @@
     
     <%# Collapsibles  %>
     <ul class="collapsible popout">
+        <% Help.all.each do |help| %>
         <li>
-            <div class="collapsible-header"><i class="material-icons">help_outline</i>How do I send a new address?</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-header"><i class="material-icons">help_outline</i><span id="question"><%= help.question %></span></div>
+            <div class="collapsible-body"><span><%= simple_format(help.answer) %></span></div>
         </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">help_outline</i>How do I report the visits of a address I've been to?</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">help_outline</i>How do I see other people's previous visits on my addresses?</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        <% end %>
     </ul>
     
 </div>
