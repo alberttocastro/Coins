@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
+  
+  root 'home#login'
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords', unlocks: 'users/unlocks'}
 
-  root 'home#login'
-  get 'home', to: "home#index", as: :home
-  get 'overview', to: "home#overview", as: :overview
-  get 'assignments', to: "home#assignments", as: :assignments
+  get 'home', to: "home#home", as: :home
   get 'login', to:'home#login', as: :login
   get 'view', to: 'home#view', as: :view
-  get 'help', to: 'home#help', as: :help
-  get 'management', to: 'home#management', as: :management
   get 'edit', to: 'home#edit', as: :edit
   
-  post 'assignment/:id/declare_finished', to:"home#declare_concluded", as: :declare_concluded
+  get 'overview', to: "overview#overview", as: :overview
+  
+  get 'assignments', to: "assignment#assignments", as: :assignments
+  post 'assignments/:id/declare_finished', to:"home#declare_concluded", as: :declare_concluded
+  
+  get 'help', to: 'help#help', as: :help
+  
+  get 'management', to: 'management#management', as: :management
   post 'management/accept_suggestion', to:"home#accept_suggestion", as: :accept_suggestion
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
