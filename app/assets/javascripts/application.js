@@ -122,6 +122,7 @@ $(document).ready(function(){
   $(".modal-trigger.suggested-address").click(function(event){
     var id = event.target.id;
 
+    $(".hidden-id").val(id);
     $(".textarea-street").val($("#" + id + ".street")[0].innerText);
     $(".textarea-neighborhood").val($("#" + id + ".neighborhood")[0].innerText);
     $(".textarea-name").val($("#" + id + ".name")[0].innerText);
