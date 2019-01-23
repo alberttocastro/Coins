@@ -64,30 +64,32 @@
     </div>
 
     <div id="accept-address" class="modal">
+        <%= form_tag accept_suggestion_path do %>
         <!-- Conteúdo -->
         <div class="modal-content">
             <h4>Add a new territory</h4> <br>
             <div class="input-field col s12">
-                <input id="textarea-street" type="text">
                 <label for="textarea-street">Street</label>
+                <%= text_field_tag :street, "", class:"textarea-street" %>
             </div>
             <div class="input-field col s12">
-                <input id="textarea-neighborhood" type="text" class="validate">
                 <label for="textarea-neighborhood">Neighborhood</label>
+                <%= text_field_tag :neighborhood, "", class:"textarea-neighborhood" %>
             </div>
             <div class="input-field col s12">
-                <input id="textarea-name" type="text">
                 <label for="textarea-name">Name</label>
+                <%= text_field_tag :name, "", class:"textarea-name" %>
             </div>
             <div class="input-field col s12">
-                <input id="textarea-comments" type="text">
                 <label for="textarea-comments">Comments</label>
+                <%= text_field_tag :comments, "", class:"textarea-comments" %>
             </div>
         </div>
         <!-- Footer -->
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
+        <% end %>
     </div>
 
 </div> <!-- <div id="new"> -->
