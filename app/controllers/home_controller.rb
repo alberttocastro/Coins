@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   #before_action :authenticate_user!, only: [:cultures, :characteristics]
-  def index
+  def home
     render "index"
   end
 
