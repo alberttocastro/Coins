@@ -20,7 +20,17 @@ class HomeController < ApplicationController
     @param = params.permit(:id)
     Assignment.find(@param[:id]).declare_concluded
 
-  end 
+  end
+  
+  # Cria um SuggestedAddress
+  def create_suggested_address
+    
+    @params = params.permit(:neighborhood, :street, :name, :comments)
+    
+    SuggestedAddress.create(@params)
+
+    redirect_to home_path
+  end
   
   
 end
