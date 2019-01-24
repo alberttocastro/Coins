@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'home', to: "home#home", as: :home
   post 'home/add_new_suggested', to: 'home#create_suggested_address', as: :create_suggested_address
+  post 'home/report_visit', to: 'home#receive_report_from_address_worked', as: :receive_report
 
   get 'login', to:'home#login', as: :login
   get 'view', to: 'home#view', as: :view
