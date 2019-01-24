@@ -109,7 +109,7 @@
             <%= hidden_field_tag :address_id, 0 %>
             <%# TODO: Trocar as partes do código comentadas %>
             <%#= hidden_field_tag :publisher_id, current_user.id %>
-            <%= hidden_field_tag :publisher_id, User.first %>
+            <%= hidden_field_tag :publisher_id, User.first.id %>
             <div class="modal-content">
                 <h4>Add a report</h4> <br>
                 <div class="input-field col s12">
