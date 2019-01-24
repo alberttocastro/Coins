@@ -33,7 +33,7 @@ class HomeController < ApplicationController
   end
 
   def receive_report_from_address_worked
-    @params = params.permit(:id, :report, :address_id, :publisher_id)
+    @params = params.permit(:id, :comment, :address_id, :publisher_id)
 
     Visit.create(@params)
 
