@@ -131,6 +131,13 @@ $(document).ready(function(){
     $(".textarea-comments").val($("#" + id + ".comments")[0].innerText);
   })
 
+  // Colocando o id do endereço no modal quando o botão de adicionar um relatório de visita for clicado
+  $("a.report-visit").click(function(event){
+    var id = event.target.id;
+
+    $("input#address_id").val(id);
+  });
+
 });
 
 //$(document).ready(runfunction);
