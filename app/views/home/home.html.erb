@@ -80,7 +80,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#report-visit">Report</a>
+                                        <a id="<%= address.id %>" class="waves-effect waves-light btn modal-trigger blue darken-3 report-visit" href="#report-visit">Report</a>
                                     </div>
                                 </div>
                             </li>
@@ -105,17 +105,23 @@
 
         <%# Modal de relatar visita %>
         <div id="report-visit" class="modal" style="min-height: 33%">
+            <%= form_tag receive_report_path do %>
+            <%= hidden_field_tag :address_id, 0 %>
+            <%# TODO: Trocar as partes do código comentadas %>
+            <%#= hidden_field_tag :publisher_id, current_user.id %>
+            <%= hidden_field_tag :publisher_id, User.first %>
             <div class="modal-content">
                 <h4>Add a report</h4> <br>
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <%= text_field_tag :report, '' %>
                     <label for="textarea1">Your report</label>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+                    <%= submit_tag "Send", class:"waves-effect waves-green btn-flat" %>
                 </div>
             </div>
+            <% end %>
         </div>
         
     </div>
