@@ -31,6 +31,14 @@ class HomeController < ApplicationController
 
     redirect_to home_path
   end
+
+  def receive_report_from_address_worked
+    @params = params.permit(:id, :report, :address_id, :publisher_id)
+
+    Visit.create(@params)
+
+    redirect_to root_path
+  end
   
   
 end
