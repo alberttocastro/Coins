@@ -27,15 +27,16 @@ class Card < ApplicationRecord
         @addresses
     end
 
+    # Retorna todas as pessoas designadas para um determinado cartão de território
     def people_assigned_to_the_card
         @assigneds = {}
 
         @assignments = Assignment.where(card_id: self.id).order(:date)
         @assignments.pluck(:date).uniq.each do |date|
-            @date = date.strftime("%d/%m/%Y")
+            date.nil? ? @date = "-" : @date = date.strftime("%d/%m/%Y")
             @assigneds[@date] = []
             @assignments.where(date: date).each do |assignment|
-                @assigneds[@date] = @assigneds[@date] << assignment.user
+                @assigneds[@date] = @assigneds[@date] << assignment.user.email
             end
         end
 
