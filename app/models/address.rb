@@ -7,10 +7,23 @@ class Address < ApplicationRecord
     has_many :telephones
     has_many :visits
 
+    # Retorna a nacionalidade
     def nationality
         if !self.nationality_id.nil?
             Nationality.find(self.nationality_id)
         end
+    end
+
+    # Retorna verdadeiro caso exista algum publicador encarregado de visitar o endereço
+    def is_visited?
+      !self.publisher_id.nil?
+    end
+
+    # Retorna o objeto do publicador que cuida do endereço, caso exista
+    def publisher
+      if !self.publisher_id.nil?
+        Publisher.find(self.publisher_id)
+      end
     end
 
     # Retorna todos os endereços que não devem ser visitados de acordo com o id da macroregião

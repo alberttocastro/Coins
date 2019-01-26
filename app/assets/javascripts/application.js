@@ -33,13 +33,15 @@ function searchHelp(){
 }
 
 $(document).ready(function(){
-  
+
+  // Formulário para pesquisar as perguntas do HELPDESK
+  var questions = {};
+  var questions_objects = $('span#question')
+  for(var i = 0; i < questions_objects.length; i++ ){
+    questions[questions_objects[i].innerText] = null;
+  }
   $('input.autocomplete').autocomplete({
-    data: {
-      'How do I send a new address?': null,
-      "How do I report the visits of a address I've been to?": null,
-      "How do I see other people's previous visits on my addresses?": null
-    },
+    data: questions,
   });
 
   $("input#autocomplete-input.autocomplete").on('input',function(){
@@ -76,7 +78,7 @@ $(document).ready(function(){
   
   
   $('.datepicker').datepicker({
-    format: 'yyyy-mm-dd',
+    format: 'dd/mm/yyyy',
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15, // Creates a dropdown of 15 years to control year,
     today: 'Today',
@@ -115,6 +117,27 @@ $(document).ready(function(){
   if (pathparts[1] != null) {
     $("#".concat(pathparts[1])).addClass("active");
   }
+
+  // Na lista de endereços sugeridos,
+  // Coloca os dados que aparecem na lista dentro do formulário do
+  // modal de adicionar novo endereço
+  $(".modal-trigger.suggested-address").click(function(event){
+    var id = event.target.id;
+
+    $(".hidden-id").val(id);
+    $(".textarea-street").val($("#" + id + ".street")[0].innerText);
+    $(".textarea-neighborhood").val($("#" + id + ".neighborhood")[0].innerText);
+    $(".textarea-name").val($("#" + id + ".name")[0].innerText);
+    $(".textarea-comments").val($("#" + id + ".comments")[0].innerText);
+  })
+
+  // Colocando o id do endereço no modal quando o botão de adicionar um relatório de visita for clicado
+  $("a.report-visit").click(function(event){
+    var id = event.target.id;
+
+    $("input#address_id").val(id);
+  });
+
 });
 
 //$(document).ready(runfunction);

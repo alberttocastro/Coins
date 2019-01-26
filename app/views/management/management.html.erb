@@ -1,0 +1,155 @@
+<% content_for :header do %>
+
+<div class="navbar-fixed">
+    <nav class="nav-extended navbar-dark indigo darken-2 z-depth-2">
+        <div class="nav-wrapper">
+            <a href="home.html" class="brand-logo">Management</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab">
+                    <a href="#new" class="active">New</a>
+                </li>
+                <li class="tab">
+                    <a href="#manage">Manage</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</div>
+
+<% end %>
+<!-- Aba de aceitar endereços novos -->
+<div id="new">
+    <div class="container">
+
+        <!-- Cartão de novo território -->
+        <div class="row">
+            <div class="col s12 m6">
+                <% SuggestedAddress.all.each do |suggested_address| %>
+                <div class="card grey lighten-5 z-depth-2">
+                    <div class="card-content indigo-text text-darken-4">
+                        <p>
+                            <b>Street:</b> <span class="street" id="<%= suggested_address.id %>"><%= suggested_address.street %></span>
+                        </p>
+                        <p>
+                            <b>Neighborhood:</b> <span class="neighborhood" id="<%= suggested_address.id %>"><%= suggested_address.neighborhood %></span>
+                        </p>
+                        <p>
+                            <b>Name:</b> <span class="name" id="<%= suggested_address.id %>"><%= suggested_address.name %></span>
+                        </p>
+                        <p>
+                            <b>Comments:</b> <span class="comments" id="<%= suggested_address.id %>"><%= suggested_address.comments %></span>
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a id="<%= suggested_address.id %>" href="#accept-address" class="modal-trigger suggested-address">Accept</a>
+                        <a href="#">Reject</a>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="accept-address" class="modal">
+        <%= form_tag accept_suggestion_path do %>
+        <%= hidden_field_tag :id, 0, class:"hidden-id" %>
+        <!-- Conteúdo -->
+        <div class="modal-content">
+            <h4>Add a new territory</h4> <br>
+            <div class="input-field col s12">
+                <label for="textarea-street">Street</label>
+                <%= text_field_tag :street, "", class:"textarea-street" %>
+            </div>
+            <div class="input-field col s12">
+                <label for="textarea-neighborhood">Neighborhood</label>
+                <%= text_field_tag :neighborhood, "", class:"textarea-neighborhood" %>
+            </div>
+            <div class="input-field col s12">
+                <label for="textarea-name">Name</label>
+                <%= text_field_tag :name, "", class:"textarea-name" %>
+            </div>
+            <div class="input-field col s12">
+                <label for="textarea-comments">Comments</label>
+                <%= text_field_tag :comments, "", class:"textarea-comments" %>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="modal-footer">
+            <%= submit_tag "agree", class:"modal-close waves-effect waves-green btn-flat" %>
+        </div>
+        <% end %>
+    </div>
+
+</div> <!-- <div id="new"> -->
+
+<!-- Aba para escolher o mapa dos endereços -->
+<div id="manage">
+    <div class="container">
+
+
+        <blockquote>
+            <h4>Address without a map - Comming soon</h4>
+        </blockquote>
+
+        <!-- Cartão de novo território -->
+        <% Address.where(card: nil).each do |address| %>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card grey lighten-5 z-depth-2">
+                    <div class="card-content indigo-text text-darken-4">
+                        <p>
+                            <b>Street:</b> <span>Rua das bromélias, 57</span>
+                        </p>
+                        <p>
+                            <b>Neighborhood:</b> <span></span>
+                        </p>
+                        <p>
+                            <b>Reference:</b> <span>Close to the house of somebody</span>
+                        </p>
+                        <p>
+                            <b>Notes:</b> <span>Take this into consideration</span>
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#choose-map" class="modal-trigger">Choose map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+        <!-- Modal - Escolher mapa -->
+        <div id="choose-map" class="modal">
+            <!-- Conteúdo -->
+            <div class="modal-content">
+                <h4>Choose map</h4> <br>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="" disabled selected>Choose map</option>
+                        <option value="1">Barra 1</option>
+                        <option value="2">Barra 2</option>
+                        <option value="3">Barra 3</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+            </div>
+        </div>
+
+    </div>
+</div>

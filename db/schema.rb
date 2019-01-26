@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180828233538) do
+ActiveRecord::Schema.define(version: 20190126224400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20180828233538) do
     t.datetime "updated_at", null: false
     t.boolean "is_valid?"
     t.boolean "is_visitable?"
-    t.boolean "is_visited?"
     t.integer "adrstype_id"
     t.text "comments"
     t.text "references"
@@ -70,12 +69,20 @@ ActiveRecord::Schema.define(version: 20180828233538) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "macroregion_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.integer "number"
     t.integer "conductor"
     t.integer "helper"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "helps", force: :cascade do |t|
+    t.text "question"
+    t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -109,6 +116,15 @@ ActiveRecord::Schema.define(version: 20180828233538) do
     t.integer "group_id"
   end
 
+  create_table "suggested_addresses", force: :cascade do |t|
+    t.string "neighborhood"
+    t.text "street"
+    t.string "name"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "telephones", force: :cascade do |t|
     t.integer "address_id"
     t.string "number"
@@ -136,7 +152,7 @@ ActiveRecord::Schema.define(version: 20180828233538) do
   create_table "visits", force: :cascade do |t|
     t.integer "address_id"
     t.integer "publisher_id"
-    t.datetime "date"
+    t.date "date"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
