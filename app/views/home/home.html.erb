@@ -104,7 +104,7 @@
         <% end %>
 
         <%# Modal de relatar visita %>
-        <div id="report-visit" class="modal" style="min-height: 33%">
+        <div id="report-visit" class="modal" style="min-height: 100%">
             <%= form_tag receive_report_path do %>
             <%= hidden_field_tag :address_id, 0 %>
             <%# TODO: Trocar as partes do código comentadas %>
@@ -112,6 +112,9 @@
             <%= hidden_field_tag :publisher_id, Publisher.first.id %>
             <div class="modal-content">
                 <h4>Add a report</h4> <br>
+                <div class="input-field col s12">
+                    <%= text_field_tag :date, '', class:'datepicker' %>
+                </div>
                 <div class="input-field col s12">
                     <%= text_field_tag :comment, '' %>
                     <label for="textarea1">Your report</label>
