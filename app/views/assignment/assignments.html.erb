@@ -86,10 +86,10 @@
             <% @assignments = card.people_assigned_to_the_card %>
             <% @assignments.keys.each do |date| %>
             <li class="collection-item">
-                <%= @assignments[date].to_s %>
+                <%= @assignments[date].join(", ") %>
                 <div class="right">
                     <div class="center">
-                        <b>date</b>
+                        <b><%= date %></b>
                     </div>
                 </div>
             </li>
