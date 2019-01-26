@@ -33,7 +33,9 @@ class HomeController < ApplicationController
   end
 
   def receive_report_from_address_worked
-    @params = params.permit(:id, :comment, :address_id, :publisher_id)
+    @params = params.permit(:id, :comment, :address_id, :publisher_id, :date)
+    #tratando a data
+    @params[:date] = Date.strptime(@params[:date], "%d/%m/%Y")
 
     Visit.create(@params)
 
