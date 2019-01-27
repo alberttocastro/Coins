@@ -79,7 +79,7 @@
                         </h4>
                     </div>
                     <div class="col s3">
-                        <a class="waves-effect waves-teal btn-flat">Received</a>
+                        <%= link_to  "Received", finish_all_card_assignments_path(card_id: card.id), method: :post, class:'waves-effect waves-teal btn-flat' %>
                     </div>
                 </div>
             </li>
