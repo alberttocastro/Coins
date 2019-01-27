@@ -39,4 +39,13 @@ class User < ApplicationRecord
 
     @assignments_to_do
   end
+
+  def publisher
+    begin
+      return Publisher.find(self.publisher_id)
+    rescue => exception
+      return false
+    end
+  end
+  
 end
