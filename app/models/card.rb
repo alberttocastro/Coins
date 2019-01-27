@@ -14,7 +14,7 @@ class Card < ApplicationRecord
         # hash = {macrorregion => [card1, card2, card3]}
         @addresses = {}
 
-        Assignment.all.pluck(:card_id).uniq.each do |card_id|
+        Assignment.where(date: nil).pluck(:card_id).uniq.each do |card_id|
             @card = Card.find(card_id)
 
             if @addresses.key?(@card.macroregion.macroreg)
