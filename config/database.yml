@@ -23,12 +23,12 @@ default: &default
 
 development:
   <<: *default
-  #adapter: sqlite3
-  #database: db/development.sqlite3
-  database: Territory_development
-  username: postgres
-  password: admin
-  host: localhost
+  adapter: sqlite3
+  database: db/development.sqlite3
+  # database: Territory_development
+  # username: postgres
+  # password: admin
+  # host: localhost
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
