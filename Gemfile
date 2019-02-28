@@ -71,7 +71,7 @@ gem 'material_icons'
 
 gem 'prawn'
 
-# gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 
 gem "rails_admin_import"
 
