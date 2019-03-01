@@ -2,7 +2,6 @@ class AssignmentController < ApplicationController
 
     def assignments
       @working_cards = Card.working_cards
-      render "assignments"
     end
 
     # Declara todos as designações de um endereço como sendo encerradas
