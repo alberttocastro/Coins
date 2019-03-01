@@ -122,31 +122,4 @@
 
 </div>
 
-<!-- Modal: Escolher irmãos para designar para endereço -->
-<div id="modal-assign-territory" class="modal">
-    <div class="modal-content">
-        <h4>Assign Territory</h4> <br>
-        <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>Choose name</option>
-                <% User.all.each do |user| %>
-                    <option value="<%= user.id %>"><%= user.email %></option>
-                <% end %>
-            </select>
-            <label>Publisher 1</label>
-        </div>
-        <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>Only one</option>
-                <% User.all.each do |user| %>
-                <option value="<%= user.id %>"><%= user.email %></option>
-                <% end %>
-            </select>
-            <label>Publisher 2</label>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-    </div>
-</div>
+<%= render  "publisher_choice_assign.html.erb" %>
