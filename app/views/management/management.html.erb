@@ -63,36 +63,7 @@
 
     </div>
 
-    <div id="accept-address" class="modal">
-        <%= form_tag accept_suggestion_path do %>
-        <%= hidden_field_tag :id, 0, class:"hidden-id" %>
-        <!-- Conteúdo -->
-        <div class="modal-content">
-            <h4>Add a new territory</h4> <br>
-            <div class="input-field col s12">
-                <label for="textarea-street">Street</label>
-                <%= text_field_tag :street, "", class:"textarea-street" %>
-            </div>
-            <div class="input-field col s12">
-                <label for="textarea-neighborhood">Neighborhood</label>
-                <%= text_field_tag :neighborhood, "", class:"textarea-neighborhood" %>
-            </div>
-            <div class="input-field col s12">
-                <label for="textarea-name">Name</label>
-                <%= text_field_tag :name, "", class:"textarea-name" %>
-            </div>
-            <div class="input-field col s12">
-                <label for="textarea-comments">Comments</label>
-                <%= text_field_tag :comments, "", class:"textarea-comments" %>
-            </div>
-        </div>
-        <!-- Footer -->
-        <div class="modal-footer">
-            <%= submit_tag "agree", class:"modal-close waves-effect waves-green btn-flat" %>
-        </div>
-        <% end %>
-    </div>
-
+    <%= render "accept_address" %>
 </div> <!-- <div id="new"> -->
 
 <!-- Aba para escolher o mapa dos endereços -->
