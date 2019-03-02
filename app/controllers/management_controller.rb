@@ -9,7 +9,7 @@ class ManagementController < ApplicationController
 
     # Remove o "id" da hash e criar um endereço com o restante.
     # Caso a criação do endereço funcione, destroi o endereço sugerido
-    if Address.create(@params.except(:id))
+    if Address.create(@params.except(:id, :utf8, :authenticity_token, :commit))
       SuggestedAddress.find(@params[:id]).destroy
     end
 
