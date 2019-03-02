@@ -20,4 +20,26 @@ class AssignmentController < ApplicationController
       redirect_to assignments_path
     end
 
+    # Função que cria uma designação para um publicador relacionando publicador e cartão de território
+    def choose_publisher_to_assign
+      
+      @publisher_1_id = params[:publisher_1].to_i
+      @publisher_2_id = params[:publisher_2].to_i
+      
+      begin
+        # TODO: trocar para usuário dinâmico quando chegar a hora
+        if !@publisher_1_id.empty?
+          Assignment.create(user_id: User.first, card_id: params[:card_id].to_i)
+        end
+        if !@publisher_2_id.empty?
+          Assignment.create(user_id: User.last, card_id: params[:card_id].to_i)
+        end
+      rescue => exception
+        puts exception
+      end
+
+      redirect_to assignments_path
+    end
+    
+
 end
