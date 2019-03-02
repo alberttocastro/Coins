@@ -5,12 +5,12 @@
     <div class="modal-content">
         <h4>Assign Territory</h4> <br>
         <div class="input-field col s12">
-            <%= select_tag(:publisher_2, options_from_collection_for_select(User.all, :id, :email), {include_blank: "Choose publisher"} ) %>
+            <%= select_tag(:publisher_1, options_from_collection_for_select(User.all, :id, :email), {include_blank: "Choose publisher"} ) %>
             <label>Publisher 1</label>
         </div>
         
         <div class="input-field col s12">
-            <%= select_tag(:publisher_1, options_from_collection_for_select(User.all, :id, :email), {include_blank: "Choose publisher"} ) %>
+            <%= select_tag(:publisher_2, options_from_collection_for_select(User.all, :id, :email), {include_blank: "Choose publisher"} ) %>
             <label>Publisher 2</label>
         </div>
     </div>
