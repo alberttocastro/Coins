@@ -1,0 +1,44 @@
+<div id="accept-address" class="modal">
+    <%= form_tag accept_suggestion_path do %>
+    <%= hidden_field_tag :id, 0, class:"hidden-id" %>
+    <!-- Conteúdo -->
+    <div class="modal-content">
+        <h4>Add a new territory</h4> <br>
+        <div class="input-field col s12">
+            Street <br>
+            <%= text_field_tag :street, "", class:"textarea-street" %>
+        </div>
+        <div class="input-field col s12">
+            Neighborhood <br>
+            <%= text_field_tag :neighborhood, "", class:"textarea-neighborhood" %>
+        </div>
+        <div class="input-field col s12">
+            Name <br>
+            <%= text_field_tag :name, "", class:"textarea-name" %>
+        </div>
+        <div class="input-field col s12">
+            Comments <br>
+            <%= text_field_tag :comments, "", class:"textarea-comments" %>
+        </div>
+        <div class="input-field col s12">
+            Type of Address <br>
+            <%= select_tag :adrstype_id, options_from_collection_for_select(Adrstype.all, :id, :typename) %>
+        </div>
+        <div class="input-field col s12">
+            Macro-Region<br>
+            <%= select_tag :macroregion_id, options_from_collection_for_select(Macroregion.all, :id, :macroreg) %>
+        </div>
+        <div class="input-field col s12">
+            Group<br>
+            <%= select_tag :group_id, options_from_collection_for_select(Group.all, :id, :number) %>
+        </div>
+        <div class="input-field col s12">
+            Card<br>
+            <%= select_tag :card_id, options_from_collection_for_select(Card.all, :id, :name) %>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <%= submit_tag "agree", class:"modal-close waves-effect waves-green btn-flat" %>
+    </div>
+    <% end %>
+</div>
