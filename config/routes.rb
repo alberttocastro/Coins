@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'assignments', to: "assignment#assignments", as: :assignments
   post 'assignments/:id/declare_finished', to:"home#declare_concluded", as: :declare_concluded
   post 'assignments/:card_id/finish_all_card_assignments', to:'assignment#finish_all_card_assignments', as: :finish_all_card_assignments
+  post 'assignments/assign', to:"assignment#choose_publisher_to_assign", as: :choose_publisher_to_assign
   
   get 'help', to: 'help#help', as: :help
   
