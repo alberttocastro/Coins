@@ -33,7 +33,7 @@
     <div class="container">
         <% Macroregion.all.each do |macroregion| %>
         <blockquote>
-            <h4><%= macroregion.macroreg %></h4>
+            <h4><%= macroregion.macroreg.nil? ? "Unnamed Region" : macroregion.macroreg %></h4>
         </blockquote>
         <% macroregion.unassigned_cards.each do |card|%>
         <ul class="collection with-header z-depth-3">
