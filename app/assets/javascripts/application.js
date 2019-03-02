@@ -138,6 +138,16 @@ $(document).ready(function(){
     $("input#address_id").val(id);
   });
 
+  /*
+  Quando o usuário clicar em adicionar um publicador para um território (designar)
+  Transporta o número do território para o modal
+  */
+  $(".add-publisher-button").click(function(event){
+    var id = event.target.id;
+
+    $("input#card").val(id);
+  });
+
 });
 
 //$(document).ready(runfunction);
