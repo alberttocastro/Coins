@@ -10,7 +10,8 @@ class AssignmentController < ApplicationController
 
       begin
         Assignment.where(card_id: @params[:card_id], date: nil).each do |assignment|
-          assignment.update(date: Date.today)
+          #assignment.update(date: Date.today)
+          assignment.destroy
         end
       rescue => exception
         puts "An error ocurred while trying to get assignment done"
@@ -28,11 +29,11 @@ class AssignmentController < ApplicationController
       
       begin
         # TODO: trocar para usuário dinâmico quando chegar a hora
-        if !@publisher_1_id.empty?
-          Assignment.create(user_id: User.first, card_id: params[:card_id].to_i)
+        if @publisher_1_id != ""
+          Assignment.create(user_id: User.first.id, card_id: params[:card].to_i)
         end
-        if !@publisher_2_id.empty?
-          Assignment.create(user_id: User.last, card_id: params[:card_id].to_i)
+        if @publisher_2_id != ""
+          Assignment.create(user_id: User.last.id, card_id: params[:card].to_i)
         end
       rescue => exception
         puts exception
