@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'permission/use_permission'
+
   root 'home#login'
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords', unlocks: 'users/unlocks'}
