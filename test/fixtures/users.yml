@@ -6,12 +6,12 @@
 #
 one: {
   email: "email1@email.com",
-  password: "1234567"
+  encrypted_password: "1234567"
 }
 # column: value
 #
 two: {
   email: "email2@email.com",
-  password: "1234567"
+  encrypted_password: "1234567"
 }
 # column: value
