@@ -14,7 +14,7 @@ class ActionDispatch::IntegrationTest
   def teardown
     Capybara.reset_sessions!
     # Capybara.use_default_driver
-    Capybara.default_driver = :selenium # :selenium_chrome and :selenium_chrome_headless are also registered
+    Capybara.default_driver = :selenium_chrome #:selenium and :selenium_chrome_headless are also registered
   end
 end
 
