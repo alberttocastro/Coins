@@ -41,8 +41,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  # gem 'selenium-webdriver'
+  # gem 'chromedriver-helper'
 end
 
 group :development do
