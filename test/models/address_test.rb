@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class AddressTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'retorna os enderecos para nao bater' do
+    # TODO: fazer o teste 
+  end
+  
+  test 'retorna se o endereco ja foi feito' do
+    # TODO: fazer o teste 
+  end
 end
