@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class PermissionControllerTest < ActionDispatch::IntegrationTest
-  test "should get use_permission" do
-    get permission_use_permission_url
+  test "deve ver a pagina use_permission_management" do
+    get permission_management_url
     assert_response :success
   end
 
