@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'permission/use_permission'
-
   root 'home#login'
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords', unlocks: 'users/unlocks'}
@@ -24,7 +22,9 @@ Rails.application.routes.draw do
   get 'help', to: 'help#help', as: :help
   
   get 'management', to: 'management#management', as: :management
-  post 'management/accept_suggestion', to:"management#accept_suggestion", as: :accept_suggestion
+  post 'management/accept_suggestion', to:"management#accept_suggestion"
+  
+  get 'permissions', to: 'permission#use_permission_management', as: :permission_management
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
