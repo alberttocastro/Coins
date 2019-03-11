@@ -1,5 +1,6 @@
 class Assignment < ApplicationRecord
 
+  # Data = Data de Conclusão
   belongs_to :card
   belongs_to :user
 
