@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class UserSessionsTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "deve existir label de user" do
+    get root_url
+    assert_select "label", "User"
+  end
 end
