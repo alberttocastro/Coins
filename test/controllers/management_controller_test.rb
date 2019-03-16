@@ -7,7 +7,7 @@ class ManagementControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'deve aceitar nova sugestao de endereco' do
-    post accept_suggestion_path, 
+    post accept_suggestion_path
     assert_respose :success
   end
 end
