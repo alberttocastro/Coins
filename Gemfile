@@ -40,7 +40,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-  gem 'ffaker', '~> 2.10'
   
   # gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
