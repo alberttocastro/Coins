@@ -14,9 +14,12 @@
 <% end %>
 
 <div class="container">
+
+    <%= form_tag home_path do %>
+
     <%# Iteração sobre todos os usuários. Relaciona-os com os seus devidos publicadores %>
-    <% User.all.each do |user| %>
     <div class="row">
+    <% User.all.each do |user| %>
         <div class="col s12 m12">
             <div class="card white z-depth-3">
                 <div class="card-content black-text">
@@ -31,7 +34,15 @@
                 </div>
             </div>
         </div>
-    </div>
     <% end %>
+    </div>
+    
+    <%# Botão para enviar as modificações %>
+    <div class="fixed-action-btn">
+        <%= button_tag type:"submit", class:"btn-floating btn-large purple darken-2" do%>
+            <i class="material-icons Large">send</i>
+        <% end  %>
+    </div>
 
+    <% end %>
 </div>
