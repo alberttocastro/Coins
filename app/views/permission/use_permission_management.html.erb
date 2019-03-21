@@ -15,15 +15,23 @@
 
 <div class="container">
     <%# Iteração sobre todos os usuários. Relaciona-os com os seus devidos publicadores %>
+    <% User.all.each do |user| %>
     <div class="row">
         <div class="col s12 m12">
             <div class="card white z-depth-3">
                 <div class="card-content black-text">
-                    <span class="card-title">email@gmail.com</span>
-                    <div></div>
+                    <span class="card-title"><%= user.email %></span>
+                    <div>
+                        <% if user.publisher_id == nil || user.publisher_id == "" %>
+                            <%= select_tag "publisher_#{user.id}", options_from_collection_for_select(Publisher.without_user, :id, :name), {include_blank: "Choose publisher"} %>
+                        <% else %>
+                            <%= select_tag "publisher_#{user.id}", options_from_collection_for_select(Publisher.without_user(user.publisher_id), :id, :name, selected: user.publisher_id) %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <% end %>
 
 </div>
