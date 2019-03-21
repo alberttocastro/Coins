@@ -25,24 +25,8 @@ Rails.application.routes.draw do
   post 'management/accept_suggestion', to:"management#accept_suggestion"
   
   get 'permissions', to: 'permission#use_permission_management', as: :permission_management
+  put 'permissions', to: 'permission#put_permissions', as: :put_permissions
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-  # get 'home/index'
-  # get 'welcome/index'
-  # get "/cultures" => "home#cultures"
-  # get "/characteristics" => "home#characteristics"
-  # get "/unassigned" => "cards#unassigned"
-  # get "/print" => "cards#print"
-  # resources :addresses
-  # resources :nationalities
-  # resources :idioms
-  # resources :macroregions
-  # resources :adrstypes
-  # resources :telephones
-  # resources :groups
-  # resources :publishers
-  # resources :cards
-  # resources :visits
