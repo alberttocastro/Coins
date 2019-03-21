@@ -15,7 +15,7 @@
 
 <div class="container">
 
-    <%= form_tag home_path do %>
+    <%= form_tag put_permissions_path, method: :put do %>
 
     <%# Iteração sobre todos os usuários. Relaciona-os com os seus devidos publicadores %>
     <div class="row">
@@ -39,7 +39,7 @@
     
     <%# Botão para enviar as modificações %>
     <div class="fixed-action-btn">
-        <%= button_tag type:"submit", class:"btn-floating btn-large purple darken-2" do%>
+        <%= button_tag type:"submit", method: :put, class:"btn-floating btn-large purple darken-2" do%>
             <i class="material-icons Large">send</i>
         <% end  %>
     </div>
