@@ -30,6 +30,10 @@
                         <% else %>
                             <%= select_tag "publisher_#{user.id}", options_from_collection_for_select(Publisher.without_user(user.publisher_id), :id, :name, selected: user.publisher_id) %>
                         <% end %>
+                        </br>
+                    </div>
+                    <div class="right-align">
+                        <%= link_to "REMOVE", remove_permissions_path(id: user.id), method: :delete %>
                     </div>
                 </div>
             </div>
