@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   
   get 'permissions', to: 'permission#use_permission_management', as: :permission_management
   put 'permissions', to: 'permission#put_permissions', as: :put_permissions
+  delete 'permisions/:id', to: 'permission#remove_publisher', as: :remove_permissions
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
