@@ -2,7 +2,7 @@
   <%= devise_error_messages! %>
 
   <div class="container">
-    <div class="row">
+    <div class="row parent">
         <div class="col s12">
             <div class="card white z-depth-3">
                 <div class="card-content black-text" style="padding-top: 0.2rem">
@@ -25,11 +25,21 @@
                         <%= f.password_field :password_confirmation, autocomplete: "off" %>
                     </div>
 
-                    <div class="actions">
-                        <%= f.submit "Sign up" %>
+                    <div class="actions" style="margin-top: 1rem">
+                        <%= f.submit "Sign up", class: "waves-effect waves-light btn-large blue darken-1 col s12 z-depth-2" %>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 <% end %>
+
+<style>
+    .parent {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        right: 20px;
+    }
+</style>
