@@ -10,8 +10,8 @@ class AssignmentController < ApplicationController
 
       begin
         Assignment.where(card_id: @params[:card_id], date: nil).each do |assignment|
-          #assignment.update(date: Date.today)
-          assignment.destroy
+          assignment.update(date: Date.today)
+          #assignment.destroy
         end
       rescue => exception
         puts "An error ocurred while trying to get assignment done"
