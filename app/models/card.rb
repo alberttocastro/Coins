@@ -44,7 +44,8 @@ class Card < ApplicationRecord
     end
 
     def is_at_work?
-        Assignment.where(card_id: self.id).length > 0
+        # Está sendo trabalhado se não tiver uma designação com data
+        Assignment.where(card_id: self.id, date: nil).length > 0
     end
     
     
