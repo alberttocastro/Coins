@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'help', to: 'help#help', as: :help
   
   get 'management', to: 'management#management', as: :management
-  post 'management/accept_suggestion', to:"management#accept_suggestion"
+  post 'management/accept_suggestion', to:"management#accept_suggestion", as: :accept_suggestion
   
   get 'permissions', to: 'permission#use_permission_management', as: :permission_management
   put 'permissions', to: 'permission#put_permissions', as: :put_permissions
