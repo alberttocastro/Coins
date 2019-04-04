@@ -47,7 +47,9 @@ class Card < ApplicationRecord
         # Está sendo trabalhado se não tiver uma designação com data
         Assignment.where(card_id: self.id, date: nil).length > 0
     end
-    
-    
 
+    def name_and_number
+        "#{self.name} - #{self.number}"
+    end
+    
 end
