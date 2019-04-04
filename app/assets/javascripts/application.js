@@ -148,6 +148,12 @@ $(document).ready(function(){
     $("input#card").val(id);
   });
 
+  $(".add-card-to-address-button").click(function(event){
+    var id = event.target.id;
+
+    $("input#address_id").val(id);
+  })
+
 });
 
 //$(document).ready(runfunction);

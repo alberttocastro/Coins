@@ -68,55 +68,56 @@
 
 
         <blockquote>
-            <h4>Address without a map - Comming soon</h4>
+            <h4>Address without a map</h4>
         </blockquote>
 
         <!-- Cartão de novo território -->
-        <% Address.where(card: nil).each do |address| %>
+        <% Address.addresses_without_card.each do |address| %>
         <div class="row">
             <div class="col s12 m6">
                 <div class="card grey lighten-5 z-depth-2">
                     <div class="card-content indigo-text text-darken-4">
                         <p>
-                            <b>Street:</b> <span>Rua das bromélias, 57</span>
+                            <b>Street:</b> <span><%= address.street %></span>
                         </p>
                         <p>
-                            <b>Neighborhood:</b> <span></span>
+                            <b>Neighborhood:</b> <span><%= address.neighborhood%></span>
                         </p>
+                        <% if !address.references.nil? %>
                         <p>
-                            <b>Reference:</b> <span>Close to the house of somebody</span>
+                            <b>Reference:</b> <span><%= address.reference %></span>
                         </p>
+                        <% end %>
+                        <% if !address.comments.nil? %>
                         <p>
-                            <b>Notes:</b> <span>Take this into consideration</span>
+                            <b>Comments:</b> <span><%= address.comments %></span>
                         </p>
+                        <% end %>
                     </div>
                     <div class="card-action">
-                        <a href="#choose-map" class="modal-trigger">Choose map</a>
+                        <a id="<%= address.id %>" href="#choose-map" class="modal-trigger add-card-to-address-button">Choose card</a>
                     </div>
                 </div>
             </div>
         </div>
         <% end %>
 
+        <%= form_tag add_address_to_card_path do %>
         <!-- Modal - Escolher mapa -->
         <div id="choose-map" class="modal">
             <!-- Conteúdo -->
             <div class="modal-content">
+                <%= hidden_field_tag :address_id %>
                 <h4>Choose map</h4> <br>
                 <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Choose map</option>
-                        <option value="1">Barra 1</option>
-                        <option value="2">Barra 2</option>
-                        <option value="3">Barra 3</option>
-                    </select>
+                    <%= select_tag :card_id, options_from_collection_for_select(Card.all, :id, :name_and_number)%>
                 </div>
             </div>
             <!-- Footer -->
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+                <%= submit_tag "Confirm", class:'modal-close waves-effect waves-green btn-flat'%>
             </div>
         </div>
-
+        <% end %>
     </div>
 </div>

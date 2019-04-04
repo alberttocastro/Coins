@@ -18,5 +18,16 @@ class ManagementController < ApplicationController
 
     redirect_to management_path
   end
+  
+  def add_address_to_card
+    params.permit(:utf8, :authenticity_token, :address_id, :card_id, :commit)
+
+    @address = Address.find(params[:address_id])
+    @address.update(card_id: params[:card_id])
+    
+    puts @address.errors.messages
+
+    redirect_to management_path
+  end
 
 end
