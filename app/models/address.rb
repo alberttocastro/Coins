@@ -43,4 +43,9 @@ class Address < ApplicationRecord
     def done?(assignment_id)
       !AssignmentAddress.where(address_id:self.id, assignment_id: assignment_id).empty?
     end
+
+    def self.addresses_without_card
+      Address.where(card_id: nil)
+    end
+    
 end
