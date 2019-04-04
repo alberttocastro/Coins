@@ -3,7 +3,9 @@ class Address < ApplicationRecord
     belongs_to :adrstype
     belongs_to :macroregion
     belongs_to :group
-    belongs_to :card
+    belongs_to :card, optional: true
+    belongs_to :nationality, optional: true
+    belongs_to :publisher, optional: true
     has_many :telephones
     has_many :visits
 
